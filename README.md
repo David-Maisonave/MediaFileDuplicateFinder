@@ -14,7 +14,7 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 ## Exclusive **MFDF** Features
 These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
 - Only delete files which match the filters.
-  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. It makes it easy for a user to unintentionally delete many files.
+  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This made it easy for a users to accedently delete 100's of files unintentionally.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out.
 - Remember window size and location from last running instance.
   - On program startup, sets the window size and position from the previous running instance.
@@ -58,7 +58,7 @@ Open terminal in VDF folder and execute `./VDF.GUI`
 You may need to set execute permission first `sudo chmod 777 VDF.GUI`
 
 #### MacOS user:
-- Install ffmpeg / ffprobe using homebrew
+- Install ffmpeg / ffprobe using home brew
 
 Open terminal in VDF folder and execute `./VDF.GUI` or if you have .NET installed `dotnet VDF.GUI.dll`
 You may get a permission error. Open system settings of your Mac, go to `Privacy & Security` and then `Developer Tools`. Now add `Terminal` to the list.
