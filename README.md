@@ -3,9 +3,16 @@
 
 Media File Duplicate Finder finds duplicated video, images, and audio files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
 
-This fork from [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), has more features and the UI (user interface) has a more standard interface which makes it more intuitive.
+MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users could report issues and post enhancement request.
+
 # Features 
-These features are not on the original base fork, and they're only include in **Media File Duplicate Finder**.
+## Base Features
+- Finds duplicate videos / images based on similarity
+- Fast scanning speed
+- Cross-platform: Windows, Linux and MacOS GUI
+
+## Exclusive **MFDF** Features
+These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
 - Only delete files which match the filters.
   - The original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. It makes it easy for a user to unintentionally delete many files.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out.
@@ -35,16 +42,8 @@ These features are not on the original base fork, and they're only include in **
 - Option to clear the filters
 - Command line options which can be used to schedule a scan and perform action.
 
-# Base Fork Description
-## Features
-- Finds duplicate videos / images based on similarity
-- Fast scanning speed
-- Cross-platform: Windows, Linux and MacOS GUI
-
 ## Requirements
-
 ### FFmpeg:
-
 #### Windows user:
 - The MSI package contains and installs the ffmpeg binaries. 
 - If using the zip file, get the latest package from https://ffmpeg.org/download.html, and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
