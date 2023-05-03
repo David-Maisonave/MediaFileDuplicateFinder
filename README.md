@@ -41,11 +41,6 @@ These features are not on the original base fork, and they're only include in **
 - Fast scanning speed
 - Cross-platform: Windows, Linux and MacOS GUI
 
-## Binaries
-
-[Daily build](https://github.com/0x90d/videoduplicatefinder/releases/tag/3.0.x) (You need to download FFmpeg and FFprobe yourself, see below! Please note the attachments of this release are automatically created and replaced on every new commit.)
-
-
 ## Requirements
 
 ### FFmpeg:
@@ -69,14 +64,9 @@ You may need to set execute permission first `sudo chmod 777 VDF.GUI`
 Open terminal in VDF folder and execute `./VDF.GUI` or if you have .NET installed `dotnet VDF.GUI.dll`
 You may get a permission error. Open system settings of your Mac, go to `Privacy & Security` and then `Developer Tools`. Now add `Terminal` to the list.
 
-## Screenshots (slightly outdated)
-<img src="https://user-images.githubusercontent.com/46010672/129763067-8855a538-4a4f-4831-ac42-938eae9343bd.png" width="510">
-
 ## License
 - Media File Duplicate Finder is licensed under GPLv3  
 - ffmpeg & ffprobe are licensed under LGPL 2.1 / GPL v2
-  - ffmpeg binaries are only included in the Windows MSI package.
-  - If using zip file or when using other platform packages, use instructions in [FFmpeg](README.md#FFmpeg)
 
 
 ## Building
