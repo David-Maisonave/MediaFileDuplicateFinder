@@ -1,4 +1,4 @@
-# Media File Duplicate Finder Ver 0.030 (Beta)
+# Media File Duplicate Finder
 [![All Releases](https://img.shields.io/github/downloads/David-Maisonave/MediaFileDuplicateFinder/total.svg)](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest)
 
 Media File Duplicate Finder finds duplicated video, images, and audio files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
