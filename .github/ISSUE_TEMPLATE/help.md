@@ -14,3 +14,7 @@ assignees: ""
 
 ## Question
 A clear and concise detailed question.
+
+
+## Snapshots
+Optionally, include snapshots to help clarify the question.

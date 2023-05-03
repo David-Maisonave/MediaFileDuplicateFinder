@@ -15,5 +15,8 @@ Thanks for taking the time to fill out this bug report!
 ## Describe the bug
 A clear and concise description of the bug.
 
+## Snapshots
+Include snapshots showing the issue.
+
 ### Expected behavior
 A clear and concise description of what you expected to happen.

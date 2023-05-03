@@ -12,4 +12,5 @@ A clear and concise description of the feature.
 
 ### What issue does it solve
 
-### Alternatives and/or workarounds
+### Snapshots
+Optionally add images which can help descibe the feature.
