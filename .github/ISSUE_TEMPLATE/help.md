@@ -1,6 +1,6 @@
 ---
 name: Help
-about: Suggest an idea for this project
+about: Post question about MediaFileDuplicateFinder
 title: ''
 labels: ''
 assignees: ''
