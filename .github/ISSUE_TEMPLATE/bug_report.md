@@ -1,7 +1,7 @@
 ---
 name: 🐞 Bug report
 about: Create a bug report
-title: "[Bug]: "
+title: "🐞[Bug]: "
 labels: "bug"
 assignees: "David-Maisonave"
 
