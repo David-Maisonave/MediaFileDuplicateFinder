@@ -1,0 +1,76 @@
+<Window
+    x:Class="VDF.GUI.Views.ThumbnailComparer"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Base"
+    x:Name="ThumbnailComparerWindow"
+    Title="Thumbnail Comparer"
+    Width="800"
+    Height="600"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    ExtendClientAreaToDecorationsHint="True"
+    FontSize="14"
+    Icon="/Assets/icon.ico"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Border BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}" BorderThickness="2">
+        <Grid ColumnDefinitions="Auto, Auto, *" RowDefinitions="Auto, *">
+            <controls:ExperimentalAcrylicBorder
+                x:Name="ExperimentalAcrylicBorderBackgroundWhite"
+                IsHitTestVisible="False"
+                IsVisible="False">
+                <controls:ExperimentalAcrylicBorder.Material>
+                    <media:ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="White" />
+                </controls:ExperimentalAcrylicBorder.Material>
+            </controls:ExperimentalAcrylicBorder>
+            <controls:ExperimentalAcrylicBorder
+                x:Name="ExperimentalAcrylicBorderBackgroundBlack"
+                IsHitTestVisible="False"
+                IsVisible="False">
+                <controls:ExperimentalAcrylicBorder.Material>
+                    <media:ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="Black" />
+                </controls:ExperimentalAcrylicBorder.Material>
+            </controls:ExperimentalAcrylicBorder>
+            <TextBlock
+                x:Name="TextBlockWindowTitle"
+                Grid.Row="0"
+                Grid.ColumnSpan="3"
+                Margin="0,4,0,10"
+                HorizontalAlignment="Center"
+                IsHitTestVisible="false"
+                Text="{Binding #ThumbnailComparerWindow.Title}" />
+            <ListBox
+                x:Name="ListBoxItems"
+                Grid.Row="1"
+                Grid.Column="0"
+                MaxWidth="100"
+                Background="{DynamicResource SystemControlBackgroundChromeBlackLowBrush}"
+                Items="{Binding Items}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image IsVisible="{Binding !IsLoadingThumbnail}" Source="{Binding Thumbnail}" />
+                            <TextBlock Text="{Binding Item.ItemInfo.Path}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="1"
+                Margin="10,20"
+                Background="{DynamicResource SystemControlHighlightBaseLowBrush}" />
+            <Border
+                Grid.Row="1"
+                Grid.Column="2"
+                Background="{DynamicResource SystemControlBackgroundChromeBlackLowBrush}">
+                <Image Source="{Binding #ListBoxItems.SelectedItem.Thumbnail}" />
+            </Border>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <PackageProjectUrl>https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/David-Maisonave/MediaFileDuplicateFinder</RepositoryUrl>
+    <PackageOutputPath>$(OutDir)</PackageOutputPath>
+    <BaseOutputPath>$(SolutionDir)bin</BaseOutputPath>
+    <Title>Media File Duplicate Finder</Title>
+    <Description>Find duplicate videos and images having different resolutions.</Description>
+    <PackageTags>MFDF,Media,File,Duplicate,Finder,VDF,Video,Files,translation,filenames,translate</PackageTags>
+    <AssemblyVersion>0.7.2023.122</AssemblyVersion>
+    <FileVersion>0.7.2023.122</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTargets>x64;arm64</PlatformTargets>
+    <NoWarn>IDE2001;ide2001;NETSDK1194</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTargets>x64;arm64</PlatformTargets>
+    <NoWarn>IDE2001;ide2001;NETSDK1194</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Remove="Properties\**" />
+    <AvaloniaXaml Remove="Properties\**" />
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\Styles.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\david\source\Repos\VideoCompareProject\MediaFileDuplicateFinder\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="C:\Users\david\source\Repos\VideoCompareProject\MediaFileDuplicateFinder\VDF.GUI\Assets\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0-preview4" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview4" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview4" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-preview4" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview4" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.0.0-preview4" />
+    <PackageReference Include="DynamicExpresso.Core" Version="2.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VDF.Core\VDF.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Update="Styles\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\DatabaseViewer.xaml.cs">
+      <DependentUpon>DatabaseViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ThumbnailComparer.xaml.cs">
+      <DependentUpon>ThumbnailComparer.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
