@@ -29,10 +29,9 @@ These features are not on the original base fork, and they're only include in **
 - Run Clean Scan option. Before running the scan, removes database entries for files which no longer exists or failed on ffmpeg/ffprobe.
 - Checkbox for show thumbnails option on main toolbar next to Zoom Thumbnails.
 - Select duplicates with shorter file names.
+- Search Directories listed on main window. Toolbar has a checkbox option which allows inclusive and exclusive directories to be displayed on main view.
 ### Future features
-- Download release with all the required binaries needed to run the program. The original fork excludes some binaries.
 - Option to remove rescan prompt.
-- Search Directories listed on main window.
 - Option to clear the filters
 - Command line options which can be used to schedule a scan and perform action.
 
