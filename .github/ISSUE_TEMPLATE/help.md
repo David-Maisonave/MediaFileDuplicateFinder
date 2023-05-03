@@ -1,0 +1,16 @@
+---
+name: Help
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+## Environment
+ - OS: [e.g. Windows / Linux / Any]
+ - Ver: [e.g. 1.0]
+
+
+## Question
+A clear and concise detailed question.
