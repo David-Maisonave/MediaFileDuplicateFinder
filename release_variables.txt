@@ -1,12 +1,12 @@
 Enter solution release name below. Recommend using name with no spaces.
 MediaFileDuplicateFinder 
 MajorVersionEnter desired major version number below. Value must be between 0-9999
-0 
+1
 Enter targeted dotnet version below.
 net7.0 
 Enter release title which can use environmental variables and/or batch variables like the following:%ReleaseName%, %MajorVersion%, %MinorVersion%, %DotNetVer%, %ReleaseTitle%, %Identifier%, %ProgramVersion%, %ReleaseTag%, %YEAR%, %MONTH%, %DAY%
 "%ReleaseName% Version %MajorVersion%.%MinorVersion%"                                                                                   "
 Enter release notes which can also use environmental variables.
-Beta Version %MajorVersion%.%MinorVersion% build date=%YEAR%-%MONTH%-%DAY%; Change title to use only major and minor version; Added search directory back to main view."                                                                                   "
+Version %MajorVersion%.%MinorVersion% build date=%YEAR%-%MONTH%-%DAY%; Full break away from original fork.
 Project to change version. Only needed for MSI package
 VDF.GUI\VDF.GUI.csproj
