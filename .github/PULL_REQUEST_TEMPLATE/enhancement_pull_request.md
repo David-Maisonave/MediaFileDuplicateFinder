@@ -1,9 +1,9 @@
 ---
 name: Enhancement Pull Request
 about: Create an enhancement pull request for MediaFileDuplicateFinder
-title: '[Enhancement Pull Request]'
-labels: 'enhancement'
-assignees: ''
+title: "[Enhancement Pull Request]"
+labels: "enhancement"
+assignees: ""
 
 ---
 
