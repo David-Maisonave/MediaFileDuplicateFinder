@@ -1,7 +1,7 @@
 ---
 name: Help
 about: Post question about MediaFileDuplicateFinder
-title: "[?]: "
+title: "[Help]: "
 labels: "question"
 assignees: ""
 
