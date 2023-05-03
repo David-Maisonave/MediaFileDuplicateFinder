@@ -1,8 +1,8 @@
 ---
 name: Feature request
 about: Suggest an idea to improve MediaFileDuplicateFinder
-title: ''
-labels: ''
+title: '[Feature-Request]'
+labels: 'Feature'
 assignees: ''
 
 ---
