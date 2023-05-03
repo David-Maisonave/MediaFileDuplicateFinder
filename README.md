@@ -14,7 +14,7 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 ## Exclusive **MFDF** Features
 These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
 - Only delete files which match the filters.
-  - The original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. It makes it easy for a user to unintentionally delete many files.
+  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. It makes it easy for a user to unintentionally delete many files.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out.
 - Remember window size and location from last running instance.
   - On program startup, sets the window size and position from the previous running instance.
