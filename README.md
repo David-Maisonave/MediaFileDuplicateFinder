@@ -1,9 +1,10 @@
-# Media File Duplicate Finder
 [![All Releases](https://img.shields.io/github/downloads/David-Maisonave/MediaFileDuplicateFinder/total.svg)](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest)
 
-Media File Duplicate Finder finds duplicated video, images, and audio files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
+[![RepositoryBanner](VDF.GUI/Assets/RepositoryBanner_Small.png)](https://github.com/David-Maisonave/MediaFileDuplicateFinder)
 
-MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users could report issues and post enhancement request.
+**Media-File-Duplicate-Finder** finds duplicated video, images, and audio files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
+
+MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users can report issues and post enhancement request directly.
 
 # Features 
 ## Base Features
@@ -15,7 +16,7 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
 - Only delete files which match the filters.
   - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This made it easy for a users to accedently delete 100's of files unintentionally.
-  - Media File Duplicate Finder does **NOT** delete files which are filtered out.
+  - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted.
 - Remember window size and location from last running instance.
   - On program startup, sets the window size and position from the previous running instance.
   - Has logic to reset the window position and size by holding down the shift key during the first few seconds of startup. The reset option may be needed for the following situations.
