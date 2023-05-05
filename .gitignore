@@ -268,5 +268,7 @@ MediaFileDuplicateFinder_Setup.vdproj_temp.vdproj
 TranslateFileNames/
 ffmpeg-msvc-build/
 
-# Exclude test data
+# Exclude test data and temp files
 Test_Data/
+*__ExcludeFromRepo__*.*
+*__DoNotAddToRepo__*.*
