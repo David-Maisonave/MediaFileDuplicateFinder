@@ -13,8 +13,8 @@
     <Title>Media File Duplicate Finder</Title>
     <Description>Find duplicate videos and images having different resolutions.</Description>
     <PackageTags>MFDF,Media,File,Duplicate,Finder,VDF,Video,Files,translation,filenames,translate</PackageTags>
-    <AssemblyVersion>1.1.2023.123</AssemblyVersion>
-    <FileVersion>1.1.2023.123</FileVersion>
+    <AssemblyVersion>1.1.2023.128</AssemblyVersion>
+    <FileVersion>1.1.2023.128</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <PlatformTargets>x64;arm64</PlatformTargets>

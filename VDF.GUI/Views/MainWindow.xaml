@@ -974,7 +974,7 @@
                                         <DataGrid.ContextMenu>
                                             <ContextMenu>
                                                 <MenuItem Command="{Binding OpenItemInFolderCommand}" Header="Open In Folder" InputGesture="F10" />
-												<MenuItem Command="{Binding OpenItems}" Header="Open / Play" InputGesture="F5" />
+												<MenuItem Command="{Binding OpenItems}" Header="Open/Play File" InputGesture="F5" />
                                                 <Separator />
                                                 <MenuItem Command="{Binding RenameFileCommand}" Header="Rename File" InputGesture="F2" ToolTip.Tip="Rename selected file" />
                                                 <MenuItem Command="{Binding RenameSwapCommand}" Header="Rename Swap" InputGesture="F3" ToolTip.Tip="Swap file names with other file in group" />
