@@ -38,7 +38,7 @@ These features are not on the original base fork, and they're only included in *
 - Checkbox for show thumbnails option on main toolbar next to Zoom Thumbnails.
 - Select duplicates with shorter file names.
 - Search Directories listed on main window. Toolbar has a checkbox option which allows inclusive and exclusive directories to be displayed on main view.
-- Play/Open Video's, Audio, Images from the context menu, and/or by using shortcut key F5.
+- Play/Open Video's, Audio, Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
 ### Future features
 - Option to remove rescan prompt.
 - Option to clear the filters
