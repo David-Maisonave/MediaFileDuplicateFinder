@@ -100,13 +100,14 @@ set Line__Separator1=#####################################################
 set Line__Separator2=*****************************************************
 set Line__Separator3=-----------------------------------------------------
 set Line__Separator4=.....................................................
+set Line__Error=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 :: ################################################################################################
 echo %Line__Separator1%
 echo Step [0]: Make sure dotnet.exe is available before anything else
 WHERE dotnet
 IF %ERRORLEVEL% NEQ 0 (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo %Line__Separator2%
 	echo Error: dotnet.exe is not installed, or its path is not in the environmental variable path
 	echo        How to fix:
@@ -114,7 +115,7 @@ IF %ERRORLEVEL% NEQ 0 (
 	echo            Make sure dotnet.exe installation path is included in the environmental variable path
 	echo Performing early exit due to missing dotnet.exe!!!!
 	echo %Line__Separator2%
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 :: ################################################################################################
@@ -203,45 +204,45 @@ set MinorVersion=%MinorVersion: =%
 set DotNetVer=%DotNetVer: =%
 
 if [%ReleaseName%] == [] (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo Error: Exiting early because ReleaseName is empty. ReleaseName="%ReleaseName%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 if [%DotNetVer%] == [] (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo Error: Exiting early because DotNetVer is empty. DotNetVer="%DotNetVer%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 if [%MajorVersion%] == [] (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo Error: Exiting early because MajorVersion is empty. MajorVersion="%MajorVersion%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 if [%MinorVersion%] == [] (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo Error: Exiting early because MinorVersion is empty. MinorVersion="%MinorVersion%".
 	echo Check if file "%~dp0%ReleaseFileMinorVersion%" exist and is correctly formatted.
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 if 1%MajorVersion% NEQ +1%MajorVersion% (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo Error: Exiting early because MajorVersion is NOT numeric. MajorVersion="%MajorVersion%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 if 1%MinorVersion% NEQ +1%MinorVersion% (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo Error: Exiting early because MinorVersion is NOT numeric. MinorVersion="%MinorVersion%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 :: If not incrementing skip following section
@@ -395,9 +396,9 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 (for %%a in (%ListOfOS%) do (
 	dotnet publish -c Release -v q --self-contained -r "%%a" --property:identifier=%Identifier% --property:version=%ProgramVersion%
 	if %ERRORLEVEL% NEQ 0 (
-		echo %Line__Separator1%
+		echo %Line__Error%
 		echo Error: Performming early exist due to error %ERRORLEVEL% from dotnet on OS target "%%a".
-		echo %Line__Separator1%
+		echo %Line__Error%
 		EXIT /B 0
 	)
 	echo       %%a build success!
@@ -410,10 +411,10 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 			echo          Creating %%a ZIP file
 			"%Prg7Zip%" a -tzip "%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.zip" "./bin/Release/%DotNetVer%/%%a/*"
 			if %ERRORLEVEL% NEQ 0 (
-				echo %Line__Separator1%
+				echo %Line__Error%
 				echo Error: Performming early exist due to error %ERRORLEVEL% from 7z for file "%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.zip".
 				echo Check folder contents of "%~dp0bin\Release\%DotNetVer%\%%a"
-				echo %Line__Separator1%
+				echo %Line__Error%
 				EXIT /B 0
 			)
 			call set "FileList=%%FileList%%%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.zip " 
@@ -421,14 +422,14 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 				:: Try to build an MSI file if setup project exist using the project name + Setup
 				if exist %SetupProjectFile_VdProj% (
 					if [%VS_Devenv%] == [] (
-						echo %Line__Separator1%
+						echo %Line__Error%
 						echo Error: Can not build %SetupProjectFile_VdProj%, because devenv.exe was not found.
 						echo         Possible fixes:
 						echo             1. Install Visual Studio version 2022, 2019, or 2017
 						echo             2. If using older VS version, or if using a non-standard installed path,
 						echo                add the path to the system environmental variable PATH
 						echo             3. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
-						echo %Line__Separator1%
+						echo %Line__Error%
 						EXIT /B 0
 					)
 					if exist .\%SetupProjectFile_VdProj_Temp% (del /Y .\%SetupProjectFile_VdProj_Temp%)
@@ -449,13 +450,13 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 						!MakeMSI_Cmd!
 						:: Note: Do not exit in the following if-block, because the files have to be renamed back. If previous command fails, the MSI move command will fail and exit.
 						if %ERRORLEVEL% NEQ 0 (
-							echo %Line__Separator1%
+							echo %Line__Error%
 							echo Error: Devenv failed with return error %ERRORLEVEL%.
 							echo   %Line__Separator4%
 							echo   Issued Command:
 							echo     !MakeMSI_Cmd!
 							echo   %Line__Separator4%
-							echo %Line__Separator1%
+							echo %Line__Error%
 						) else (
 							echo %Line__Separator3%
 							echo MSI package build success...
@@ -465,15 +466,17 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 							move /Y %SetupProjectFile_VdProj_TempRename% %SetupProjectFile_VdProj%
 						)
 						move /Y .\%ReleaseName%_Setup\Release\%ReleaseName%_Setup.msi %PkgDir%\%PkgPrefix%%%a%PkgPostfix%_Setup.msi
-						if %ERRORLEVEL% NEQ 0 (
-							echo %Line__Separator1%
+						if NOT Exist "%PkgDir%\%PkgPrefix%%%a%PkgPostfix%_Setup.msi" (
+							echo %Line__Error%
 							echo Error: Failed to create MSI or failed to move MSI file to deployment path.
 							echo         Possible fixes:
 							echo             1. Check write permissions for path "%~dp0%PkgDir%"
 							echo             2. Try following command on the DOS prompt in folder "%~dp0":
 							echo                !MakeMSI_Cmd!
-							echo             3. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
-							echo %Line__Separator1%
+							echo             3. Check path "%~dp0\%ReleaseName%_Setup\Release"
+							echo             4. Check if file exist: "%~dp0\%ReleaseName%_Setup\Release\%ReleaseName%_Setup.msi"
+							echo             5. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
+							echo %Line__Error%
 							EXIT /B 0
 						)
 						call set "FileList=%%FileList%%%PkgDir%\%PkgPrefix%%%a%PkgPostfix%_Setup.msi "
@@ -481,12 +484,12 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 						echo %Line__Separator3%
 						echo MSI package build and staging complete...
 					) else (
-						echo %Line__Separator1%
+						echo %Line__Error%
 						echo Error: Failed to create temporary VdProj file [%SetupProjectFile_VdProj_Temp%]
 						echo         Possible fixes:
 						echo             1. Check write permissions for path "%~dp0%%SetupProjectFile_VdProj_Temp%"
 						echo             2. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
-						echo %Line__Separator1%
+						echo %Line__Error%
 						EXIT /B 0
 					)
 				)
@@ -496,10 +499,10 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 			echo          Creating %%a TAR file
 			"%Prg7Zip%" a -ttar %PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tar "./bin/Release/%DotNetVer%/%%a/*"
 			if %ERRORLEVEL% NEQ 0 (
-				echo %Line__Separator1%
+				echo %Line__Error%
 				echo Error: Performming early exist due to error %ERRORLEVEL% from 7z for file "%PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tar".
 				echo Check folder contents of "%~dp0bin\Release\%DotNetVer%\%%a"
-				echo %Line__Separator1%
+				echo %Line__Error%
 				EXIT /B 0
 			)
 			echo          %Line__Separator4%
@@ -507,10 +510,10 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 			echo          "%Prg7Zip%" a %PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tgz %PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tar
 			"%Prg7Zip%" a %PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tgz %PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tar
 			if %ERRORLEVEL% NEQ 0 (
-				echo %Line__Separator1%
+				echo %Line__Error%
 				echo Error: Performming early exist due to error %ERRORLEVEL% from 7z for file "%PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tgz".
 				echo Check file "%~dp0%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.tar"
-				echo %Line__Separator1%
+				echo %Line__Error%
 				EXIT /B 0
 			)
 			echo          %Line__Separator4%
@@ -560,7 +563,7 @@ echo Step [5]: Create new Github release and upload the packages
 echo gh release create %ReleaseTag% %FileList% --latest --title %ReleaseTitle% --notes %ReleaseNotes%
 gh release create %ReleaseTag% %FileList% --latest --title %ReleaseTitle% --notes %ReleaseNotes%
 if %ERRORLEVEL% NEQ 0 (
-	echo %Line__Separator1%
+	echo %Line__Error%
 	echo %Line__Separator2%
 	echo Error: Creating a Github release failed!
 	echo Error: Failed due to error %ERRORLEVEL% from gh release for files %FileList%.
@@ -574,7 +577,7 @@ if %ERRORLEVEL% NEQ 0 (
 	echo %FileList%
 	echo %Line__Separator3%
 	echo %Line__Separator2%
-	echo %Line__Separator1%
+	echo %Line__Error%
 	EXIT /B 0
 )
 echo Git release creation complete for ReleaseTag %ReleaseTag%
