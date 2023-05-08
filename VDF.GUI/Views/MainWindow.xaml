@@ -267,297 +267,327 @@
                                         </MenuItem>
                                     </MenuItem>
                                     <MenuItem Header="|" />
-                                    <CheckBox Margin="5,0,0,0" IsChecked="{Binding ElementName=GridDirectories, Path=IsVisible}">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Viewbox
-                                                Width="16"
-                                                Height="16"
-                                                Focusable="False">
-                                                <Canvas
-                                                    Width="24"
-                                                    Height="24"
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                                                    Margin="5,0,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Text="View" />
+                                                <Path
+                                                    Margin="4,2,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Data="M 0 0 L 6 6 L 12 0 Z"
+                                                    Fill="{DynamicResource SystemBaseHighColor}" />
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                        <CheckBox Margin="5,0,0,0" IsChecked="{Binding ElementName=GridDirectories, Path=IsVisible}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Viewbox
+                                                    Width="16"
+                                                    Height="16"
                                                     Focusable="False">
-                                                    <Path
-                                                        Data="M10,13V11H18V13H10M10,19V17H14V19H10M10,7V5H22V7H10M6,17H8.5L5,20.5L1.5,17H4V7H1.5L5,3.5L8.5,7H6V17Z"
-                                                        Fill="{DynamicResource SystemBaseHighColor}"
-                                                        Focusable="False" />
-                                                </Canvas>
-                                            </Viewbox>
+                                                    <Canvas
+                                                        Width="24"
+                                                        Height="24"
+                                                        Focusable="False">
+                                                        <Path
+                                                            Data="M10,13V11H18V13H10M10,19V17H14V19H10M10,7V5H22V7H10M6,17H8.5L5,20.5L1.5,17H4V7H1.5L5,3.5L8.5,7H6V17Z"
+                                                            Fill="{DynamicResource SystemBaseHighColor}"
+                                                            Focusable="False" />
+                                                    </Canvas>
+                                                </Viewbox>
+                                                <TextBlock
+                                                    Margin="5,0,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Text="Directories" />
+                                            </StackPanel>
+                                        </CheckBox>
+                                        <CheckBox Margin="5,0,0,0" IsChecked="{Binding ElementName=GridFilter, Path=IsVisible}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Viewbox
+                                                    Width="16"
+                                                    Height="16"
+                                                    Focusable="False">
+                                                    <Canvas
+                                                        Width="24"
+                                                        Height="24"
+                                                        Focusable="False">
+                                                        <Path
+                                                            Data="M10,13V11H18V13H10M10,19V17H14V19H10M10,7V5H22V7H10M6,17H8.5L5,20.5L1.5,17H4V7H1.5L5,3.5L8.5,7H6V17Z"
+                                                            Fill="{DynamicResource SystemBaseHighColor}"
+                                                            Focusable="False" />
+                                                    </Canvas>
+                                                </Viewbox>
+                                                <TextBlock
+                                                    Margin="5,0,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Text="Filter/Sort" />
+                                            </StackPanel>
+                                        </CheckBox>                                        
+                                        
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                                                    Margin="5,0,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Text="Zoom" />
+                                                <Path
+                                                    Margin="4,2,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Data="M 0 0 L 6 6 L 12 0 Z"
+                                                    Fill="{DynamicResource SystemBaseHighColor}" />
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
                                             <TextBlock
                                                 Margin="5,0,0,0"
                                                 VerticalAlignment="Center"
-                                                Text="Directories" />
+                                                IsEnabled="False"
+                                                Text="Zoom All:" />
+                                            <Slider
+                                                x:Name="ZoomSlider"
+                                                MinWidth="100"
+                                                Margin="5,0,0,0"
+                                                Padding="0"
+                                                VerticalAlignment="Center"
+                                                IsSnapToTickEnabled="True"
+                                                LargeChange="0.5"
+                                                Maximum="4.0"
+                                                Minimum="0.5"
+                                                Orientation="Horizontal"
+                                                SmallChange="0.1"
+                                                TickFrequency="0.5"
+                                                Value="1.0">
+                                                <Slider.Styles>
+                                                    <Style Selector="Slider:horizontal">
+                                                        <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
+                                                        <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
+                                                        <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
+                                                        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+                                                        <Setter Property="Template">
+                                                            <ControlTemplate>
+                                                                <DataValidationErrors>
+                                                                    <Border
+                                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                                        CornerRadius="{TemplateBinding CornerRadius}">
+                                                                        <Grid
+                                                                            x:Name="SliderContainer"
+                                                                            Margin="{TemplateBinding Padding}"
+                                                                            Background="{DynamicResource SliderContainerBackground}">
+                                                                            <Grid
+                                                                                x:Name="HorizontalTemplate"
+                                                                                MinHeight="{DynamicResource SliderHorizontalHeight}"
+                                                                                ColumnDefinitions="Auto,Auto,*">
+                                                                                <Track
+                                                                                    Name="PART_Track"
+                                                                                    Grid.ColumnSpan="3"
+                                                                                    IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                                                                                    Maximum="{TemplateBinding Maximum}"
+                                                                                    Minimum="{TemplateBinding Minimum}"
+                                                                                    Orientation="Horizontal"
+                                                                                    Value="{TemplateBinding Value,
+                                                                            Mode=TwoWay}">
+                                                                                    <Track.DecreaseButton>
+                                                                                        <RepeatButton
+                                                                                            Name="PART_DecreaseButton"
+                                                                                            HorizontalAlignment="Stretch"
+                                                                                            VerticalAlignment="Stretch"
+                                                                                            Background="{TemplateBinding Foreground}"
+                                                                                            Focusable="False">
+                                                                                            <RepeatButton.Template>
+                                                                                                <ControlTemplate>
+                                                                                                    <Grid>
+                                                                                                        <Border
+                                                                                                            Name="FocusTarget"
+                                                                                                            Margin="0,-10"
+                                                                                                            Background="Transparent" />
+                                                                                                        <Border
+                                                                                                            Name="TrackBackground"
+                                                                                                            Height="{DynamicResource SliderTrackThemeHeight}"
+                                                                                                            VerticalAlignment="Center"
+                                                                                                            Background="{TemplateBinding Background}"
+                                                                                                            CornerRadius="{DynamicResource ControlCornerRadius}" />
+                                                                                                    </Grid>
+                                                                                                </ControlTemplate>
+                                                                                            </RepeatButton.Template>
+                                                                                        </RepeatButton>
+                                                                                    </Track.DecreaseButton>
+                                                                                    <Track.IncreaseButton>
+                                                                                        <RepeatButton
+                                                                                            Name="PART_IncreaseButton"
+                                                                                            HorizontalAlignment="Stretch"
+                                                                                            VerticalAlignment="Stretch"
+                                                                                            Background="{TemplateBinding Background}"
+                                                                                            Focusable="False">
+                                                                                            <RepeatButton.Template>
+                                                                                                <ControlTemplate>
+                                                                                                    <Grid>
+                                                                                                        <Border
+                                                                                                            Name="FocusTarget"
+                                                                                                            Margin="0,-10"
+                                                                                                            Background="Transparent" />
+                                                                                                        <Border
+                                                                                                            Name="TrackBackground"
+                                                                                                            Height="{DynamicResource SliderTrackThemeHeight}"
+                                                                                                            VerticalAlignment="Center"
+                                                                                                            Background="{TemplateBinding Background}"
+                                                                                                            CornerRadius="{DynamicResource ControlCornerRadius}" />
+                                                                                                    </Grid>
+                                                                                                </ControlTemplate>
+                                                                                            </RepeatButton.Template>
+                                                                                        </RepeatButton>
+                                                                                    </Track.IncreaseButton>
+                                                                                    <Thumb
+                                                                                        Name="thumb"
+                                                                                        Width="{DynamicResource SliderHorizontalThumbWidth}"
+                                                                                        Height="{DynamicResource SliderHorizontalThumbHeight}"
+                                                                                        Margin="0"
+                                                                                        Padding="0"
+                                                                                        Background="{DynamicResource SliderThumbBackground}"
+                                                                                        BorderThickness="0"
+                                                                                        DataContext="{TemplateBinding Value}"
+                                                                                        Theme="{StaticResource FluentSliderThumbTheme}" />
+                                                                                </Track>
+                                                                            </Grid>
+                                                                        </Grid>
+                                                                    </Border>
+                                                                </DataValidationErrors>
+                                                            </ControlTemplate>
+                                                        </Setter>
+                                                    </Style>
+                                                </Slider.Styles>
+                                            </Slider>
                                         </StackPanel>
-                                    </CheckBox>
-                                    <CheckBox Margin="5,0,0,0" IsChecked="{Binding ElementName=GridFilter, Path=IsVisible}">
                                         <StackPanel Orientation="Horizontal">
-                                            <Viewbox
-                                                Width="16"
-                                                Height="16"
-                                                Focusable="False">
-                                                <Canvas
-                                                    Width="24"
-                                                    Height="24"
-                                                    Focusable="False">
-                                                    <Path
-                                                        Data="M10,13V11H18V13H10M10,19V17H14V19H10M10,7V5H22V7H10M6,17H8.5L5,20.5L1.5,17H4V7H1.5L5,3.5L8.5,7H6V17Z"
-                                                        Fill="{DynamicResource SystemBaseHighColor}"
-                                                        Focusable="False" />
-                                                </Canvas>
-                                            </Viewbox>
+                                            <CheckBox
+                                                VerticalAlignment="Center"
+                                                IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=ShowThumbnailColumn}"
+                                                IsThreeState="False" />
                                             <TextBlock
                                                 Margin="5,0,0,0"
                                                 VerticalAlignment="Center"
-                                                Text="Filter/Sort" />
+                                                IsEnabled="False"
+                                                Text="Zoom Thumbnails:" />
+                                            <Slider
+                                                x:Name="ZoomSliderThumbnails"
+                                                MinWidth="100"
+                                                Margin="5,0,0,0"
+                                                VerticalAlignment="Center"
+                                                IsSnapToTickEnabled="True"
+                                                LargeChange="0.5"
+                                                Maximum="4.0"
+                                                Minimum="0.5"
+                                                Orientation="Horizontal"
+                                                SmallChange="0.1"
+                                                TickFrequency="0.5"
+                                                Value="1.0">
+                                                <Slider.Styles>
+                                                    <Style Selector="Slider:horizontal">
+                                                        <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
+                                                        <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
+                                                        <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
+                                                        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+                                                        <Setter Property="Template">
+                                                            <ControlTemplate>
+                                                                <DataValidationErrors>
+                                                                    <Border
+                                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                                        CornerRadius="{TemplateBinding CornerRadius}">
+                                                                        <Grid
+                                                                            x:Name="SliderContainer"
+                                                                            Margin="{TemplateBinding Padding}"
+                                                                            Background="{DynamicResource SliderContainerBackground}">
+                                                                            <Grid
+                                                                                x:Name="HorizontalTemplate"
+                                                                                MinHeight="{DynamicResource SliderHorizontalHeight}"
+                                                                                ColumnDefinitions="Auto,Auto,*">
+                                                                                <Track
+                                                                                    Name="PART_Track"
+                                                                                    Grid.ColumnSpan="3"
+                                                                                    IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                                                                                    Maximum="{TemplateBinding Maximum}"
+                                                                                    Minimum="{TemplateBinding Minimum}"
+                                                                                    Orientation="Horizontal"
+                                                                                    Value="{TemplateBinding Value,
+                                                                                Mode=TwoWay}">
+                                                                                    <Track.DecreaseButton>
+                                                                                        <RepeatButton
+                                                                                            Name="PART_DecreaseButton"
+                                                                                            HorizontalAlignment="Stretch"
+                                                                                            VerticalAlignment="Stretch"
+                                                                                            Background="{TemplateBinding Foreground}"
+                                                                                            Focusable="False">
+                                                                                            <RepeatButton.Template>
+                                                                                                <ControlTemplate>
+                                                                                                    <Grid>
+                                                                                                        <Border
+                                                                                                            Name="FocusTarget"
+                                                                                                            Margin="0,-10"
+                                                                                                            Background="Transparent" />
+                                                                                                        <Border
+                                                                                                            Name="TrackBackground"
+                                                                                                            Height="{DynamicResource SliderTrackThemeHeight}"
+                                                                                                            VerticalAlignment="Center"
+                                                                                                            Background="{TemplateBinding Background}"
+                                                                                                            CornerRadius="{DynamicResource ControlCornerRadius}" />
+                                                                                                    </Grid>
+                                                                                                </ControlTemplate>
+                                                                                            </RepeatButton.Template>
+                                                                                        </RepeatButton>
+                                                                                    </Track.DecreaseButton>
+                                                                                    <Track.IncreaseButton>
+                                                                                        <RepeatButton
+                                                                                            Name="PART_IncreaseButton"
+                                                                                            HorizontalAlignment="Stretch"
+                                                                                            VerticalAlignment="Stretch"
+                                                                                            Background="{TemplateBinding Background}"
+                                                                                            Focusable="False">
+                                                                                            <RepeatButton.Template>
+                                                                                                <ControlTemplate>
+                                                                                                    <Grid>
+                                                                                                        <Border
+                                                                                                            Name="FocusTarget"
+                                                                                                            Margin="0,-10"
+                                                                                                            Background="Transparent" />
+                                                                                                        <Border
+                                                                                                            Name="TrackBackground"
+                                                                                                            Height="{DynamicResource SliderTrackThemeHeight}"
+                                                                                                            VerticalAlignment="Center"
+                                                                                                            Background="{TemplateBinding Background}"
+                                                                                                            CornerRadius="{DynamicResource ControlCornerRadius}" />
+                                                                                                    </Grid>
+                                                                                                </ControlTemplate>
+                                                                                            </RepeatButton.Template>
+                                                                                        </RepeatButton>
+                                                                                    </Track.IncreaseButton>
+                                                                                    <Thumb
+                                                                                        Name="thumb"
+                                                                                        Width="{DynamicResource SliderHorizontalThumbWidth}"
+                                                                                        Height="{DynamicResource SliderHorizontalThumbHeight}"
+                                                                                        Margin="0"
+                                                                                        Padding="0"
+                                                                                        Background="{DynamicResource SliderThumbBackground}"
+                                                                                        BorderThickness="0"
+                                                                                        DataContext="{TemplateBinding Value}"
+                                                                                        Theme="{StaticResource FluentSliderThumbTheme}" />
+                                                                                </Track>
+                                                                            </Grid>
+                                                                        </Grid>
+                                                                    </Border>
+                                                                </DataValidationErrors>
+                                                            </ControlTemplate>
+                                                        </Setter>
+                                                    </Style>
+                                                </Slider.Styles>
+                                            </Slider>
                                         </StackPanel>
-                                    </CheckBox>
-
-
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock
-                                            Margin="5,0,0,0"
-                                            VerticalAlignment="Center"
-                                            IsEnabled="False"
-                                            Text="Zoom All:" />
-                                        <Slider
-                                            x:Name="ZoomSlider"
-                                            MinWidth="100"
-                                            Margin="5,0,0,0"
-                                            Padding="0"
-                                            VerticalAlignment="Center"
-                                            IsSnapToTickEnabled="True"
-                                            LargeChange="0.5"
-                                            Maximum="4.0"
-                                            Minimum="0.5"
-                                            Orientation="Horizontal"
-                                            SmallChange="0.1"
-                                            TickFrequency="0.5"
-                                            Value="1.0">
-                                            <Slider.Styles>
-                                                <Style Selector="Slider:horizontal">
-                                                    <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
-                                                    <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
-                                                    <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
-                                                    <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-                                                    <Setter Property="Template">
-                                                        <ControlTemplate>
-                                                            <DataValidationErrors>
-                                                                <Border
-                                                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                                                    CornerRadius="{TemplateBinding CornerRadius}">
-                                                                    <Grid
-                                                                        x:Name="SliderContainer"
-                                                                        Margin="{TemplateBinding Padding}"
-                                                                        Background="{DynamicResource SliderContainerBackground}">
-                                                                        <Grid
-                                                                            x:Name="HorizontalTemplate"
-                                                                            MinHeight="{DynamicResource SliderHorizontalHeight}"
-                                                                            ColumnDefinitions="Auto,Auto,*">
-                                                                            <Track
-                                                                                Name="PART_Track"
-                                                                                Grid.ColumnSpan="3"
-                                                                                IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
-                                                                                Maximum="{TemplateBinding Maximum}"
-                                                                                Minimum="{TemplateBinding Minimum}"
-                                                                                Orientation="Horizontal"
-                                                                                Value="{TemplateBinding Value,
-                                                                                Mode=TwoWay}">
-                                                                                <Track.DecreaseButton>
-                                                                                    <RepeatButton
-                                                                                        Name="PART_DecreaseButton"
-                                                                                        HorizontalAlignment="Stretch"
-                                                                                        VerticalAlignment="Stretch"
-                                                                                        Background="{TemplateBinding Foreground}"
-                                                                                        Focusable="False">
-                                                                                        <RepeatButton.Template>
-                                                                                            <ControlTemplate>
-                                                                                                <Grid>
-                                                                                                    <Border
-                                                                                                        Name="FocusTarget"
-                                                                                                        Margin="0,-10"
-                                                                                                        Background="Transparent" />
-                                                                                                    <Border
-                                                                                                        Name="TrackBackground"
-                                                                                                        Height="{DynamicResource SliderTrackThemeHeight}"
-                                                                                                        VerticalAlignment="Center"
-                                                                                                        Background="{TemplateBinding Background}"
-                                                                                                        CornerRadius="{DynamicResource ControlCornerRadius}" />
-                                                                                                </Grid>
-                                                                                            </ControlTemplate>
-                                                                                        </RepeatButton.Template>
-                                                                                    </RepeatButton>
-                                                                                </Track.DecreaseButton>
-                                                                                <Track.IncreaseButton>
-                                                                                    <RepeatButton
-                                                                                        Name="PART_IncreaseButton"
-                                                                                        HorizontalAlignment="Stretch"
-                                                                                        VerticalAlignment="Stretch"
-                                                                                        Background="{TemplateBinding Background}"
-                                                                                        Focusable="False">
-                                                                                        <RepeatButton.Template>
-                                                                                            <ControlTemplate>
-                                                                                                <Grid>
-                                                                                                    <Border
-                                                                                                        Name="FocusTarget"
-                                                                                                        Margin="0,-10"
-                                                                                                        Background="Transparent" />
-                                                                                                    <Border
-                                                                                                        Name="TrackBackground"
-                                                                                                        Height="{DynamicResource SliderTrackThemeHeight}"
-                                                                                                        VerticalAlignment="Center"
-                                                                                                        Background="{TemplateBinding Background}"
-                                                                                                        CornerRadius="{DynamicResource ControlCornerRadius}" />
-                                                                                                </Grid>
-                                                                                            </ControlTemplate>
-                                                                                        </RepeatButton.Template>
-                                                                                    </RepeatButton>
-                                                                                </Track.IncreaseButton>
-                                                                                <Thumb
-                                                                                    Name="thumb"
-                                                                                    Width="{DynamicResource SliderHorizontalThumbWidth}"
-                                                                                    Height="{DynamicResource SliderHorizontalThumbHeight}"
-                                                                                    Margin="0"
-                                                                                    Padding="0"
-                                                                                    Background="{DynamicResource SliderThumbBackground}"
-                                                                                    BorderThickness="0"
-                                                                                    DataContext="{TemplateBinding Value}"
-                                                                                    Theme="{StaticResource FluentSliderThumbTheme}" />
-                                                                            </Track>
-                                                                        </Grid>
-                                                                    </Grid>
-                                                                </Border>
-                                                            </DataValidationErrors>
-                                                        </ControlTemplate>
-                                                    </Setter>
-                                                </Style>
-                                            </Slider.Styles>
-                                        </Slider>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <CheckBox
-                                            VerticalAlignment="Center"
-                                            IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=ShowThumbnailColumn}"
-                                            IsThreeState="False" />
-                                        <TextBlock
-                                            Margin="5,0,0,0"
-                                            VerticalAlignment="Center"
-                                            IsEnabled="False"
-                                            Text="Zoom Thumbnails:" />
-                                        <Slider
-                                            x:Name="ZoomSliderThumbnails"
-                                            MinWidth="100"
-                                            Margin="5,0,0,0"
-                                            VerticalAlignment="Center"
-                                            IsSnapToTickEnabled="True"
-                                            LargeChange="0.5"
-                                            Maximum="4.0"
-                                            Minimum="0.5"
-                                            Orientation="Horizontal"
-                                            SmallChange="0.1"
-                                            TickFrequency="0.5"
-                                            Value="1.0">
-                                            <Slider.Styles>
-                                                <Style Selector="Slider:horizontal">
-                                                    <Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
-                                                    <Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
-                                                    <Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
-                                                    <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-                                                    <Setter Property="Template">
-                                                        <ControlTemplate>
-                                                            <DataValidationErrors>
-                                                                <Border
-                                                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                                                    CornerRadius="{TemplateBinding CornerRadius}">
-                                                                    <Grid
-                                                                        x:Name="SliderContainer"
-                                                                        Margin="{TemplateBinding Padding}"
-                                                                        Background="{DynamicResource SliderContainerBackground}">
-                                                                        <Grid
-                                                                            x:Name="HorizontalTemplate"
-                                                                            MinHeight="{DynamicResource SliderHorizontalHeight}"
-                                                                            ColumnDefinitions="Auto,Auto,*">
-                                                                            <Track
-                                                                                Name="PART_Track"
-                                                                                Grid.ColumnSpan="3"
-                                                                                IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
-                                                                                Maximum="{TemplateBinding Maximum}"
-                                                                                Minimum="{TemplateBinding Minimum}"
-                                                                                Orientation="Horizontal"
-                                                                                Value="{TemplateBinding Value,
-                                                                                Mode=TwoWay}">
-                                                                                <Track.DecreaseButton>
-                                                                                    <RepeatButton
-                                                                                        Name="PART_DecreaseButton"
-                                                                                        HorizontalAlignment="Stretch"
-                                                                                        VerticalAlignment="Stretch"
-                                                                                        Background="{TemplateBinding Foreground}"
-                                                                                        Focusable="False">
-                                                                                        <RepeatButton.Template>
-                                                                                            <ControlTemplate>
-                                                                                                <Grid>
-                                                                                                    <Border
-                                                                                                        Name="FocusTarget"
-                                                                                                        Margin="0,-10"
-                                                                                                        Background="Transparent" />
-                                                                                                    <Border
-                                                                                                        Name="TrackBackground"
-                                                                                                        Height="{DynamicResource SliderTrackThemeHeight}"
-                                                                                                        VerticalAlignment="Center"
-                                                                                                        Background="{TemplateBinding Background}"
-                                                                                                        CornerRadius="{DynamicResource ControlCornerRadius}" />
-                                                                                                </Grid>
-                                                                                            </ControlTemplate>
-                                                                                        </RepeatButton.Template>
-                                                                                    </RepeatButton>
-                                                                                </Track.DecreaseButton>
-                                                                                <Track.IncreaseButton>
-                                                                                    <RepeatButton
-                                                                                        Name="PART_IncreaseButton"
-                                                                                        HorizontalAlignment="Stretch"
-                                                                                        VerticalAlignment="Stretch"
-                                                                                        Background="{TemplateBinding Background}"
-                                                                                        Focusable="False">
-                                                                                        <RepeatButton.Template>
-                                                                                            <ControlTemplate>
-                                                                                                <Grid>
-                                                                                                    <Border
-                                                                                                        Name="FocusTarget"
-                                                                                                        Margin="0,-10"
-                                                                                                        Background="Transparent" />
-                                                                                                    <Border
-                                                                                                        Name="TrackBackground"
-                                                                                                        Height="{DynamicResource SliderTrackThemeHeight}"
-                                                                                                        VerticalAlignment="Center"
-                                                                                                        Background="{TemplateBinding Background}"
-                                                                                                        CornerRadius="{DynamicResource ControlCornerRadius}" />
-                                                                                                </Grid>
-                                                                                            </ControlTemplate>
-                                                                                        </RepeatButton.Template>
-                                                                                    </RepeatButton>
-                                                                                </Track.IncreaseButton>
-                                                                                <Thumb
-                                                                                    Name="thumb"
-                                                                                    Width="{DynamicResource SliderHorizontalThumbWidth}"
-                                                                                    Height="{DynamicResource SliderHorizontalThumbHeight}"
-                                                                                    Margin="0"
-                                                                                    Padding="0"
-                                                                                    Background="{DynamicResource SliderThumbBackground}"
-                                                                                    BorderThickness="0"
-                                                                                    DataContext="{TemplateBinding Value}"
-                                                                                    Theme="{StaticResource FluentSliderThumbTheme}" />
-                                                                            </Track>
-                                                                        </Grid>
-                                                                    </Grid>
-                                                                </Border>
-                                                            </DataValidationErrors>
-                                                        </ControlTemplate>
-                                                    </Setter>
-                                                </Style>
-                                            </Slider.Styles>
-                                        </Slider>
-                                    </StackPanel>
+                                    </MenuItem>
                                 </Menu>
                                 <Grid
                                     x:Name="GridFilter"
@@ -735,8 +765,9 @@
                                         Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"
                                         CanUserResizeColumns="True">
                                         <DataGrid.KeyBindings>
-                                            <KeyBinding Command="{Binding OpenItemInFolderCommand}" Gesture="F10" />
-                                            <KeyBinding Command="{Binding RenameFileCommand}" Gesture="F2" />
+											<KeyBinding Command="{Binding OpenItemInFolderCommand}" Gesture="F10" />
+											<KeyBinding Command="{Binding OpenItems}" Gesture="F5" />
+											<KeyBinding Command="{Binding RenameFileCommand}" Gesture="F2" />
                                             <KeyBinding Command="{Binding RenameSwapCommand}" Gesture="Shift+F2" />
                                             <KeyBinding Command="{Binding RenameSwapCommand}" Gesture="F3" />
                                             <KeyBinding Command="{Binding RenameSelectToCommand}" Gesture="Alt+F2" />
@@ -943,6 +974,7 @@
                                         <DataGrid.ContextMenu>
                                             <ContextMenu>
                                                 <MenuItem Command="{Binding OpenItemInFolderCommand}" Header="Open In Folder" InputGesture="F10" />
+												<MenuItem Command="{Binding OpenItems}" Header="Open / Play" InputGesture="F5" />
                                                 <Separator />
                                                 <MenuItem Command="{Binding RenameFileCommand}" Header="Rename File" InputGesture="F2" ToolTip.Tip="Rename selected file" />
                                                 <MenuItem Command="{Binding RenameSwapCommand}" Header="Rename Swap" InputGesture="F3" ToolTip.Tip="Swap file names with other file in group" />

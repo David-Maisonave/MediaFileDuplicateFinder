@@ -77,11 +77,7 @@ namespace VDF.GUI.ViewModels {
 				   ItemInfo.Fps.Equals(other.ItemInfo.Fps);
 		}
 		public bool EqualsButQuality(DuplicateItemVM other) {
-			if (ReferenceEquals(null, other)) 
-				return false;
-			if (ReferenceEquals(this, other)) 
-				return true;
-			return ItemInfo.GroupId.Equals(other.ItemInfo.GroupId);
+			return ReferenceEquals(null, other) ? false : ReferenceEquals(this, other) ? true : ItemInfo.GroupId.Equals(other.ItemInfo.GroupId);
 		}
 		public bool EqualsOnlyLength(DuplicateItemVM other) {
 			if (ReferenceEquals(null, other)) 

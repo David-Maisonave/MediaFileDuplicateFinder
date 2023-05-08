@@ -272,3 +272,8 @@ ffmpeg-msvc-build/
 Test_Data/
 *__ExcludeFromRepo__*.*
 *__DoNotAddToRepo__*.*
+
+# Exclude reparsepoint files which are used to help view file using VS
+*.xaml.xml
+gitignore.txt
+

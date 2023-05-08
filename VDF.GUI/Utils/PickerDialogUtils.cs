@@ -30,11 +30,7 @@ namespace VDF.GUI.Utils {
 		}
 		internal static async Task<string?> SaveFilePicker(FilePickerSaveOptions options) {
 			var path = await ApplicationHelpers.MainWindow.StorageProvider.SaveFilePickerAsync(options);
-
-			if (path != null && path.TryGetUri(out Uri? uriPath))
-				return uriPath.LocalPath;
-
-			return null;
+			return (path != null && path.TryGetUri(out Uri? uriPath)) ? uriPath.LocalPath:null;
 		}
 		internal static async Task<List<string>?> OpenDialogPicker(FolderPickerOpenOptions options) {
 			var paths = await ApplicationHelpers.MainWindow.StorageProvider.OpenFolderPickerAsync(options);

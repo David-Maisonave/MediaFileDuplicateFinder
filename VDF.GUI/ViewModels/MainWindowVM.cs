@@ -820,6 +820,12 @@ namespace VDF.GUI.ViewModels {
 			Scanner.Stop();
 		}, this.WhenAnyValue(x => x.IsScanning));
 
+		public static ReactiveCommand<Unit, Unit> CheckGridDirectories => ReactiveCommand.Create(() => {
+			ApplicationHelpers.MainWindow.FindControl <Grid>("GridDirectories").IsVisible = true;
+			ApplicationHelpers.MainWindow.FindControl<CheckBox>("Directoriest").IsChecked = true;
+			ApplicationHelpers.MainWindow.FindControl<CheckBox>("Filter/Sort").IsChecked = false;
+		});
+
 		public ReactiveCommand<Unit, Unit> MarkGroupAsNotAMatchCommand => ReactiveCommand.Create(() => {
 			Dispatcher.UIThread.InvokeAsync(async () => {
 				if (GetDataGrid.SelectedItem is not DuplicateItemVM data) return;

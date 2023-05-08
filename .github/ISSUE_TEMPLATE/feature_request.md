@@ -7,10 +7,13 @@ assignees: "David-Maisonave"
 
 ---
 
+## Environment
+ - OS: [e.g. Windows / Linux / Any]
+
 ## Describe desired feature
 A clear and concise description of the feature.
 
-### What issue does it solve
+### What issue does it solve?
 
 ### Snapshots
-Optionally add images which can help descibe the feature.
+Optionally add images which can help describe the feature.
