@@ -42,6 +42,7 @@ These features are not on the original base fork, and they're only included in *
 - Option to remove rescan prompt.
 - Option to clear the filters
 - Command line options which can be used to schedule a scan and perform action.
+- Feature to automatically translate file names from one language to another.
 
 ## Requirements
 ### FFmpeg:
