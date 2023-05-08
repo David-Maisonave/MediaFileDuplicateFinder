@@ -465,6 +465,13 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 							move /Y %SetupProjectFile_VdProj% %SetupProjectFile_VdProj_Temp%
 							move /Y %SetupProjectFile_VdProj_TempRename% %SetupProjectFile_VdProj%
 						)
+						if NOT Exist "%~dp0\%ReleaseName%_Setup\Release\%ReleaseName%_Setup.msi" (
+							echo %Line__Separator4%
+							echo File does not exist yet: "%~dp0\%ReleaseName%_Setup\Release\%ReleaseName%_Setup.msi"
+							echo Pausing for 30 seconds to see if build is lagging.
+							choice /c yk /d y /t 30 /n > nul
+							echo %Line__Separator4%
+						)
 						move /Y .\%ReleaseName%_Setup\Release\%ReleaseName%_Setup.msi %PkgDir%\%PkgPrefix%%%a%PkgPostfix%_Setup.msi
 						if NOT Exist "%PkgDir%\%PkgPrefix%%%a%PkgPostfix%_Setup.msi" (
 							echo %Line__Error%
