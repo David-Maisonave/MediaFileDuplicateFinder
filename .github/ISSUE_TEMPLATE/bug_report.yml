@@ -1,6 +1,6 @@
 name: 🐞 New Bug Report
 description: Create a bug report
-title: "🐞: "
+title: "🐞[Bug]: "
 labels: [Bug]
 body:
   - type: markdown
