@@ -11,12 +11,14 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 - Finds duplicate videos / images based on similarity
 - Fast scanning speed
 - Cross-platform: Windows, Linux and MacOS GUI
+- Optionally select duplicate files with lower resolution for deletion.
+- Optionally select duplicate files with lower duration for deletion.
 
 ## Exclusive **MFDF** Features
 These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
 - Only delete files which match the filters.
-  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This made it easy for a users to accedently delete 100's of files unintentionally.
-  - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted.
+  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accedently delete 100's of files unintentionally.
+  - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted. No hidden deletes!
 - Remember window size and location from last running instance.
   - On program startup, sets the window size and position from the previous running instance.
   - Has logic to reset the window position and size by holding down the shift key during the first few seconds of startup. The reset option may be needed for the following situations.
@@ -38,6 +40,7 @@ These features are not on the original base fork, and they're only included in *
 - Checkbox for show thumbnails option on main toolbar next to Zoom Thumbnails.
 - Select duplicates with shorter file names.
 - Search Directories listed on main window. Toolbar has a checkbox option which allows inclusive and exclusive directories to be displayed on main view.
+- Play/Open Video's, Audio, Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
 ### Future features
 - Option to remove rescan prompt.
 - Option to clear the filters
