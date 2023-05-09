@@ -1,6 +1,5 @@
 name: Feature Request UI
 description: Suggest an idea to improve MediaFileDuplicateFinder
-title: [Enhancement]: 
 labels: [Enhancement]
 body:
   - type: markdown
