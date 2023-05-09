@@ -8,7 +8,7 @@ body:
     attributes:
       value: |
        Thank you for taking the time to fill out this bug report!
-       Fields marked with an asterisk (*) are required, and remaining fields are optional, but we encourage that they be used so-as to more effeciently isolate the issue.
+       Fields marked with an asterisk (*) are required, and remaining fields are optional, but we encourage their usage.
   - type: textarea
     id: feature
     attributes:

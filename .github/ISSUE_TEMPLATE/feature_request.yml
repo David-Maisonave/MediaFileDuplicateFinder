@@ -8,6 +8,7 @@ body:
     attributes:
       value: |
        Please fill out the following fields with as much detail as possible:
+       Fields marked with an asterisk (*) are required, and remaining fields are optional, but we encourage their usage.
   - type: textarea
     id: feature
     attributes:
