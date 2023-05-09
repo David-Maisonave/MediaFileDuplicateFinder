@@ -267,7 +267,6 @@
                                         </MenuItem>
                                     </MenuItem>
                                     <MenuItem Header="|" />
-
                                     <MenuItem>
                                         <MenuItem.Header>
                                             <StackPanel Orientation="Horizontal">
@@ -282,51 +281,9 @@
                                                     Fill="{DynamicResource SystemBaseHighColor}" />
                                             </StackPanel>
                                         </MenuItem.Header>
-                                        <CheckBox Margin="5,0,0,0" IsChecked="{Binding ElementName=GridDirectories, Path=IsVisible}">
-                                            <StackPanel Orientation="Horizontal">
-                                                <Viewbox
-                                                    Width="16"
-                                                    Height="16"
-                                                    Focusable="False">
-                                                    <Canvas
-                                                        Width="24"
-                                                        Height="24"
-                                                        Focusable="False">
-                                                        <Path
-                                                            Data="M10,13V11H18V13H10M10,19V17H14V19H10M10,7V5H22V7H10M6,17H8.5L5,20.5L1.5,17H4V7H1.5L5,3.5L8.5,7H6V17Z"
-                                                            Fill="{DynamicResource SystemBaseHighColor}"
-                                                            Focusable="False" />
-                                                    </Canvas>
-                                                </Viewbox>
-                                                <TextBlock
-                                                    Margin="5,0,0,0"
-                                                    VerticalAlignment="Center"
-                                                    Text="Directories" />
-                                            </StackPanel>
-                                        </CheckBox>
-                                        <CheckBox Margin="5,0,0,0" IsChecked="{Binding ElementName=GridFilter, Path=IsVisible}">
-                                            <StackPanel Orientation="Horizontal">
-                                                <Viewbox
-                                                    Width="16"
-                                                    Height="16"
-                                                    Focusable="False">
-                                                    <Canvas
-                                                        Width="24"
-                                                        Height="24"
-                                                        Focusable="False">
-                                                        <Path
-                                                            Data="M10,13V11H18V13H10M10,19V17H14V19H10M10,7V5H22V7H10M6,17H8.5L5,20.5L1.5,17H4V7H1.5L5,3.5L8.5,7H6V17Z"
-                                                            Fill="{DynamicResource SystemBaseHighColor}"
-                                                            Focusable="False" />
-                                                    </Canvas>
-                                                </Viewbox>
-                                                <TextBlock
-                                                    Margin="5,0,0,0"
-                                                    VerticalAlignment="Center"
-                                                    Text="Filter/Sort" />
-                                            </StackPanel>
-                                        </CheckBox>                                        
-                                        
+                                        <RadioButton IsChecked="{Binding ElementName=GridDirectories, Path=IsVisible}" GroupName="View Group" Content="Directories"/>
+										<RadioButton IsChecked="{Binding  ElementName=GridFilter, Path=IsVisible}" GroupName="View Group" Content="Filter / Sort"/>
+                                        <RadioButton GroupName="View Group" Content="None"/>
                                     </MenuItem>
                                     <MenuItem>
                                         <MenuItem.Header>
