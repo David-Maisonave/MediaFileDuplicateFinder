@@ -1,7 +1,7 @@
 name: Feature Request UI
 description: Suggest an idea to improve MediaFileDuplicateFinder
 title: "[Enhancement_UI]: "
-labels: [Enhancement]
+labels: [Enhancement, GUI]
 body:
   - type: markdown
     attributes:
@@ -31,6 +31,6 @@ body:
     id: Snapshots
     attributes:
       label: Snapshots / Images
-      description: Optionally attach images which can help explain the feature, and a description of what to look for in the image.
+      description: Optionally attach images which can help explain the feature, and a description of what to look for in the image(s).
     validations:
       required: false      
