@@ -10,35 +10,27 @@ body:
   - type: textarea
     id: feature
     attributes:
-      label: Description of the feature or enhancement you'd like to see in HandBrake
+      label: A clear and concise description of the feature or enhancement you'd like to see in MediaFileDuplicateFinder
     validations:
       required: true
   - type: input
     id: os
     attributes:
-      label: What Operating System are you running?
-      placeholder: e.g. Windows 10, macOS 11, Ubuntu 20.04
-    validations:
-      required: true
-  - type: input
-    id: hb-version
-    attributes:
-      label: What version of HandBrake are you running?
-      placeholder: e.g. 1.3.3, Nightly 10c4c78
+      label: Is it OS specific?
+      placeholder: e.g. Windows, MacOS, Linux
     validations:
       required: false
   - type: input
     id: hb-download
     attributes:
-      label: Where did you download HandBrake from?
-      placeholder: e.g. handbrake.fr, github, flathub etc.
+      label: Where did you download MediaFileDuplicateFinder from?
+      placeholder: e.g. github, sourceforge.net, Axter.com etc.
     validations:
       required: false
   - type: textarea
-    id: activity-log
+    id: Snapshots
     attributes:
-      label: Activity Log, Crash Log or any other details
-      description: If the request is off the back of failure or unsupported file format, please post a log as it can help us track down what is missing. Please read https://handbrake.fr/docs/en/latest/help/activity-log.html for more information.
-      render: text
+      label: Snapshots / Images
+      description: Optionally add images which can help explain the feature.
     validations:
-      required: false
+      required: false      

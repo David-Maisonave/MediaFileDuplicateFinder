@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea to improve MediaFileDuplicateFinder
 title: "[Enhancement]: "
-labels: "enhancement"
+labels: "Enhancement"
 assignees: "David-Maisonave"
 
 ---
