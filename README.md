@@ -2,7 +2,7 @@
 
 [![RepositoryBanner](VDF.GUI/Assets/RepositoryBanner_Small.png)](https://github.com/David-Maisonave/MediaFileDuplicateFinder)
 
-**Media-File-Duplicate-Finder** finds duplicated video, images, and audio files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
+**Media-File-Duplicate-Finder** finds duplicated video and image files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
 
 MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users can report issues and post enhancement request directly.
 
@@ -40,7 +40,7 @@ These features are not on the original base fork, and they're only included in *
 - Checkbox for show thumbnails option on main toolbar next to Zoom Thumbnails.
 - Select duplicates with shorter file names.
 - Search Directories listed on main window. Toolbar has a checkbox option which allows inclusive and exclusive directories to be displayed on main view.
-- Play/Open Video's, Audio, Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
+- Play/Open Videos and Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
 ### Future features
 - Option to remove rescan prompt.
 - Option to clear the filters
