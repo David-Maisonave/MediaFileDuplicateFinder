@@ -19,7 +19,7 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 - *[Delete all duplicate files with lower resolution](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Delete-duplicate-files-with-shorter-duration-lower-resolution).
 - *[Delete all duplicate files with shorter duration](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Delete-duplicate-files-with-shorter-duration-lower-resolution).
 - Only delete files which match the filters.
-  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accedently delete 100's of files unintentionally.
+  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accidentally delete 100's of files unintentionally.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted. No hidden deletes!
 - Remember window size and location from last running instance.
   - On program startup, sets the window size and position from the previous running instance.
@@ -31,7 +31,7 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 - [Windows Only] Exclude Hard Links (hardlinks) option which is more reliable and better optimized compared to VDF.
   - The exclude hard links option works on all NTFS drive configurations, where-as VDF fails to work on some NTFS configurations.
 - Save on exit option has the following options:
-  - Save_Aways
+  - Always_Save
   - Never_Save
   - Prompt_to_Save.
 - Stream line menu having one toolbar (vs 2) which gives user more real-estate to view scan results.
