@@ -7,16 +7,17 @@
 
 MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users can report issues and post enhancement request directly.
 
-# Features 
-## Base Features
-- Finds duplicate videos / images based on similarities
-- Fast scanning speed
-- Cross-platform: Windows, Linux and MacOS GUI
-- Option which can select all duplicate files with lower resolution for deletion.
-- Option which can select all duplicate files with lower duration for deletion.
+# [Downloads](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest)
+- [Downloads](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest) are available for multiple platforms (**Windows**, **Linux**, & **MacOS**). 
+- The Windows binaries are available in an install MSI package and in a portable ZIP file.
+- For the latest release, click [here](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest).
 
-## Exclusive **MFDF** Features
-These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
+# Features 
+- *Finds duplicate videos / images based on similarities
+- *Fast scanning speed
+- *Cross-platform: Windows, Linux and MacOS
+- *Option which can select all duplicate files with lower resolution for deletion.
+- *Option which can select all duplicate files with lower duration for deletion.
 - Only delete files which match the filters.
   - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accedently delete 100's of files unintentionally.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted. No hidden deletes!
@@ -26,9 +27,9 @@ These features are not on the original base fork, and they're only included in *
     - Change in quantity of monitors
 	- Change in monitor resolutions
 	- Corrupt Window settings between running instances
+- Windows Installer (MSI package), which includes ffmpeg binaries.
 - [Windows Only] Exclude Hard Links (hardlinks) option which is more reliable and better optimized compared to VDF.
   - The exclude hard links option works on all NTFS drive configurations, where-as VDF fails to work on some NTFS configurations.
-- Windows Installer (MSI package), which includes ffmpeg binaries.
 - Save on exit option has the following options:
   - Save_Aways
   - Never_Save
@@ -42,6 +43,9 @@ These features are not on the original base fork, and they're only included in *
 - Select duplicates with shorter file names.
 - Search Directories listed on main window. Toolbar has a checkbox option which allows inclusive and exclusive directories to be displayed on main view.
 - Play/Open Videos and Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
+
+_* Features which came with the original fork. All other features are unique to MediaFileDuplicateFinder (MFDF)_
+
 ### Future features
 - Add support for Audio file comparison
 - Option to remove rescan prompt.
