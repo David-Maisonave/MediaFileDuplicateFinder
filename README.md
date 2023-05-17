@@ -3,7 +3,7 @@
 
 [![RepositoryBanner](VDF.GUI/Assets/RepositoryBanner_Small.png)](https://github.com/David-Maisonave/MediaFileDuplicateFinder)
 
-**Media-File-Duplicate-Finder** finds duplicated video and image files based on similarities. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
+**Media-File-Duplicate-Finder** finds duplicated video and image files based on similarities. Finds duplicates which have different file types, format, resolution, frame rate, watermark, and file tags.
 
 MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users can report issues and post enhancement request directly.
 
