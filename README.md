@@ -13,7 +13,7 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 - For the latest release, click [here](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest).
 
 # Features 
-- *Finds duplicate videos / images based on similarities
+- *[Finds duplicate videos / images based on similarities](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Find-Duplicates)
 - *Fast scanning speed
 - *Cross-platform: Windows, Linux and MacOS
 - *Option which can select all duplicate files with lower resolution for deletion.
