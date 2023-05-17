@@ -16,8 +16,8 @@ MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplica
 - *[Finds duplicate videos / images based on similarities](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Find-Duplicates)
 - *Fast scanning speed
 - *Cross-platform: Windows, Linux and MacOS
-- *Option which can select all duplicate files with lower resolution for deletion.
-- *Option which can select all duplicate files with lower duration for deletion.
+- *[Delete all duplicate files with lower resolution](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Delete-duplicate-files-with-shorter-duration-lower-resolution).
+- *[Delete all duplicate files with shorter duration](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Delete-duplicate-files-with-shorter-duration-lower-resolution).
 - Only delete files which match the filters.
   - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accedently delete 100's of files unintentionally.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted. No hidden deletes!
