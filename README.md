@@ -1,3 +1,4 @@
+## 📢 New Version Released: [Info & Download](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest) 🔥
 [![All Releases](https://img.shields.io/github/downloads/David-Maisonave/MediaFileDuplicateFinder/total.svg)](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/David-Maisonave/MediaFileDuplicateFinder)](https://github.com/David-Maisonave/MediaFileDuplicateFinder/issues)
 
