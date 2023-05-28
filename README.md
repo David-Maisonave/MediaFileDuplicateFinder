@@ -58,7 +58,7 @@ _* Features which came with the original fork. All other features are unique to 
 ### FFmpeg => v6.0:
 #### Windows user:
 - The MSI package contains and installs the ffmpeg binaries. 
-- If using the zip file, get the latest package from https://ffmpeg.org/download.html, and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
+- If using the zip file, get the latest package from [https://ffmpeg.org/download.html](https://github.com/BtbN/FFmpeg-Builds/releases), and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
 
 #### Linux user:
 - Installing ffmpeg:
