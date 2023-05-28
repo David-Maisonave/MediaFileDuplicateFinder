@@ -277,3 +277,6 @@ Test_Data/
 *.xaml.xml
 gitignore.txt
 
+# Exclude temp and backup files
+*.bak
+
