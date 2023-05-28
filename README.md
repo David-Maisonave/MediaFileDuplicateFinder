@@ -1,23 +1,26 @@
+### 📢 New _(Windows, Linux, & MacOS)_ Release: [Downloads](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest) 🔥
 [![All Releases](https://img.shields.io/github/downloads/David-Maisonave/MediaFileDuplicateFinder/total.svg)](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest)
+[![GitHub issues](https://img.shields.io/github/issues/David-Maisonave/MediaFileDuplicateFinder)](https://github.com/David-Maisonave/MediaFileDuplicateFinder/issues)
 
 [![RepositoryBanner](VDF.GUI/Assets/RepositoryBanner_Small.png)](https://github.com/David-Maisonave/MediaFileDuplicateFinder)
 
-**Media-File-Duplicate-Finder** finds duplicated video, images, and audio files based on similarity. It can finds duplicates which have different resolution, frame rate, watermark, and video file tags.
+**Media-File-Duplicate-Finder** finds duplicated video and image files based on similarities. Finds duplicates which have different file types, format, resolution, frame rate, watermark, and file tags.
 
 MediaFileDuplicateFinder (**MFDF**) was originally a fork of [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder).  Originally this fork was created so-as to add more features and to give the UI a more standard intuitive interface. MediaFileDuplicateFinder has fully broken off from the original fork, so that users can report issues and post enhancement request directly.
 
-# Features 
-## Base Features
-- Finds duplicate videos / images based on similarity
-- Fast scanning speed
-- Cross-platform: Windows, Linux and MacOS GUI
-- Optionally select duplicate files with lower resolution for deletion.
-- Optionally select duplicate files with lower duration for deletion.
+# [Downloads](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest)
+- [Downloads](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest) are available for multiple platforms (**Windows**, **Linux**, & **MacOS**). 
+- The Windows binaries are available in an install MSI package and in a portable ZIP file.
+- For the latest release, click [here](https://github.com/David-Maisonave/MediaFileDuplicateFinder/releases/latest).
 
-## Exclusive **MFDF** Features
-These features are not on the original base fork, and they're only included in **Media File Duplicate Finder**.
+# Features 
+- *[Finds duplicate videos / images based on similarities](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Find-Duplicates)
+- *Fast scanning speed
+- *Cross-platform: Windows, Linux and MacOS
+- *[Delete all duplicate files with lower resolution](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Delete-duplicate-files-with-shorter-duration-lower-resolution).
+- *[Delete all duplicate files with shorter duration](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/1.-Features#Delete-duplicate-files-with-shorter-duration-lower-resolution).
 - Only delete files which match the filters.
-  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accedently delete 100's of files unintentionally.
+  - In the original fork [0x90d/videoduplicatefinder](https://github.com/0x90d/videoduplicatefinder), all actions apply to filtered out items as well as viewable items. This makes it easy for a users to accidentally delete 100's of files unintentionally.
   - Media File Duplicate Finder does **NOT** delete files which are filtered out. What you see is what gets deleted. No hidden deletes!
 - Remember window size and location from last running instance.
   - On program startup, sets the window size and position from the previous running instance.
@@ -25,11 +28,11 @@ These features are not on the original base fork, and they're only included in *
     - Change in quantity of monitors
 	- Change in monitor resolutions
 	- Corrupt Window settings between running instances
+- Windows Installer (MSI package), which includes ffmpeg binaries.
 - [Windows Only] Exclude Hard Links (hardlinks) option which is more reliable and better optimized compared to VDF.
   - The exclude hard links option works on all NTFS drive configurations, where-as VDF fails to work on some NTFS configurations.
-- Windows Installer (MSI package), which includes ffmpeg binaries.
 - Save on exit option has the following options:
-  - Save_Aways
+  - Always_Save
   - Never_Save
   - Prompt_to_Save.
 - Stream line menu having one toolbar (vs 2) which gives user more real-estate to view scan results.
@@ -40,18 +43,22 @@ These features are not on the original base fork, and they're only included in *
 - Checkbox for show thumbnails option on main toolbar next to Zoom Thumbnails.
 - Select duplicates with shorter file names.
 - Search Directories listed on main window. Toolbar has a checkbox option which allows inclusive and exclusive directories to be displayed on main view.
-- Play/Open Video's, Audio, Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
+- Play/Open Videos and Images from the context menu, and/or by using shortcut key F5. (This feature might get added to main fork)
+
+_* Features which came with the original fork. All other features are unique to MediaFileDuplicateFinder (MFDF)_
+
 ### Future features
+- Add support for Audio file comparison
 - Option to remove rescan prompt.
 - Option to clear the filters
 - Command line options which can be used to schedule a scan and perform action.
 - Feature to automatically translate file names from one language to another.
 
 ## Requirements
-### FFmpeg:
+### FFmpeg => v6.0:
 #### Windows user:
 - The MSI package contains and installs the ffmpeg binaries. 
-- If using the zip file, get the latest package from https://ffmpeg.org/download.html, and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
+- If using the zip file, get the latest package from [https://github.com/BtbN/FFmpeg-Builds/releases/latest](https://github.com/BtbN/FFmpeg-Builds/releases/latest), and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
 
 #### Linux user:
 - Installing ffmpeg:
