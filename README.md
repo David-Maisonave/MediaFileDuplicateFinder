@@ -55,7 +55,7 @@ _* Features which came with the original fork. All other features are unique to 
 - Feature to automatically translate file names from one language to another.
 
 ## Requirements
-### FFmpeg:
+### FFmpeg 6.0 or higher:
 #### Windows user:
 - The MSI package contains and installs the ffmpeg binaries. 
 - If using the zip file, get the latest package from https://ffmpeg.org/download.html, and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
