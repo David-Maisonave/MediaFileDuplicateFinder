@@ -266,7 +266,7 @@ MediaFileDuplicateFinder_Setup.vdproj_temp.vdproj
 
 # Exclude projects which are not ready to be included in this solution.
 TranslateFileNames/
-ffmpeg-msvc-build/
+ffmpeg_source/
 
 # Exclude test data and temp files
 Test_Data/

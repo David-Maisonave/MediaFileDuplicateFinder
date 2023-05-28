@@ -1,0 +1,240 @@
+			".1st",  // Readme Text
+			".abw",  // AbiWord Document
+			".act",  // FoxPro Documenting Wizard Action Diagram
+			//".adt",  // AutoCAD Audit Log
+			".aim",  // AIMMS ASCII Model
+			".ans",  // ANSI Text
+			".asc",  // ASCII text
+			//".asc",  // AutoDesk ASCII Export
+			".ascii",  // ASCII Text
+			".aty",  // Association Placeholder
+			".azw",  // Amazon Kindle eBook Reader
+			".bad",  // Microsoft Exchange Badmail
+			".bbs",  // Bulletin Board Sytem Text FileUncommon
+			".bdp",  // Microsoft Exchange Diagnostic Message
+			".bdr",  // Microsoft Exchange",  // Non-Delivery Report
+			".bean",  // Bean Rich Text Document
+			".bib",  // Bibliography Document
+			".blg",  // BibTeX LogAverage
+			".bna",  // Barna Document
+			".boc",  // EasyWord Big Document
+			".charset",  // Character Set
+			".chord",  // Song Chords
+			".crd",  // Guitar Tablature
+			".crwl",  // Crawl
+			".cyi",  // Clustify Input
+			".dbt",  // dBase Text MemoAverage
+			".dct",  // Visual Foxpro Database Container
+			".dgs",  // Dagesh Pro Document
+			".diz",  // Description In Zipfile
+			".dne",  // Netica Text
+			".doc",  // Microsoft Word DocumentVery Common
+			".doc",  // Microsoft WordPad DocumentAverage
+			".docm",  // Microsoft Office Word (2007+) Document (Macro Enabled)Common
+			".docx",  // Microsoft Office Word (2007+) DocumentVery Common
+			".dot",  // Microsoft Word Document TemplateCommon
+			".dotm",  // Microsoft Office Word (2007+) Template (Macro Enabled)Common
+			".dotx",  // Microsoft Office Word (2007+) TemplateCommon
+			".dvi",  // TeX/LaTeX Device Independent Document
+			".dx",  // DEC WPS Plus Document
+			".email",  // Microsoft Outlook Express mail message
+			".emlx",  // Mail Message
+			".err",  // Error Message Log
+			".err",  // FoxPro Compilation Error
+			".etf",  // ENIGMA Transportable
+			".etf",  // Enriched Text FormatAverage
+			".etx",  // Structure Enhanced Text
+			".euc",  // Extended Unix Code
+			".faq",  // Frequently Asked Questions Document
+			".fb2",  // FictionBook 2.0
+			".fbl",  // CADfix Command Level Log
+			".fdf",  // Acrobat Forms Data Format
+			".fdr",  // Final Draft Document
+			".fds",  // Final Draft Secure Copy
+			".fes",  // 3D Topicscape Fileless Occurrence Placeholder
+			".flr",  // Decompiled Flash ActionScript
+			".fpt",  // FileMaker Pro Memo
+			".fpt",  // Visual FoxPro Memo Fields FileAverage
+			".frt",  // Visual FoxPro Report Menu
+			".fxc",  // FilePackager Configuration
+			".gio",  // Adagio Score
+			".gpn",  // GlidePlan Map Document
+			".gsd",  // Generic Station Description
+			".gthr",  // Gather Log
+			".gtx",  // GX Text Word Pad FileRare
+			".gv",  // GraphcViz
+			".h1s",  // Assistance Platform Help FileAverage
+			".hht",  // Help and Support Center HHT
+			".hkm",  // Havok MovieAverage
+			".hs",  // Java HelpSet
+			".hwp",  // Hangul Text Document FileAverage
+			".hz",  // Hanzi (Chinese) Text
+			".idx",  // Outlook Express Mailbox Index
+			".iil",  // CleanSweep Installation Log
+			".imapmbox",  // IMAP Mailbox
+			".ipf",  // OS/2 Help
+			".jis",  // Japanese Industry Standard Text
+			".jp1",  // Japanese (Romaji) Text
+			".klg",  // KOFIA Log
+			".klg",  // Log
+			".kml",  // Keyhole Markup Language FileAverage
+			".knt",  // KeyNote Note
+			".kon",  // Yahoo! Widget XML
+			".kwd",  // Keyword
+			".latex",  // LaTeX Source Document
+			".lbt",  // FoxPro Label
+			".lic",  // License FileCommon
+			".lis",  // Structured Query Report (SQR) Output
+			".lit",  // Microsoft Reader eBook FileVery Common
+			".log",  // Log FileVery Common
+			".lp2",  // iLEAP Word Processing Document
+			".lrc",  // Lyrics
+			".lrf",  // Sony eBook Reader Document
+			".lrx",  // Sony eBook
+			".lsd",  // Lingvo Dictionary
+			".lst",  // List FileAverage
+			".lst",  // Visual FoxPro Documenting Wizard List
+			".ltr",  // Letter
+			".lue",  // Norton LiveUpdate Log
+			".luf",  // Lipikar Uniform Format
+			".lwp",  // Lotus Wordpro 96/97 FileAverage
+			".lxfml",  // LEGO Digital Designer XML
+			".lyt",  // TurboTax Install Log
+			".lyx",  // Latex/Lyx Document FileAverage
+			".mbox",  // Mailbox
+			".me",  // Readme FileAverage
+			".mell",  // Mellel Word Processing
+			".mellel",  // Mellel Word Processing Document
+			".mnt",  // FoxPro Menu
+			".msg",  // Microsoft Mail MessageVery Common
+			".mw",  // MacWrite II Text Document
+			".mwd",  // MarinerWrite Document
+			".mwp",  // Lotus Word Pro SmartMaster
+			".mxi",  // Macromedia Extension InformationAverage
+			".nfo",  // Information
+			".notes",  // Memento Notes
+			".now",  // ReadMe Text
+			".nwctxt",  // NoteWorthy Composer 2 Text
+			".nws",  // Newsgroup Article Message FileAverage
+			".nzb",  // NewzBin
+
+			".ocr",  // FAXGrapper Fax-to-Text
+			".odm",  // OpenDocument Master Document
+			".odt",  // OpenOffice/StarOffice OpenDocument (V.2) Text DocVery Common
+			".ofl",  // OtsAV PlayList
+			".ogs",  // Origin LabTalk Script FileUncommon
+			".opf",  // Open eBook
+			".opml",  // Outline Processor Markup Language (OPML)
+			".ort",  // Rich Text Editor Document
+			".ott",  // OpenDocument Text Document Template
+			".p65",  // PageMaker Document FileAverage
+			".p7s",  // PKCS #7 Digitally Signed Message
+			".pages",  // Pages DocumentVery Common
+			".pdg",  // SSReader eBook
+			".pfx",  // First Choice Word Processing Document
+			".pjt",  // Visual FoxPro Memo
+			".pm6",  // PageMaker 6 DocumentUncommon
+			".prt",  // Printer Output
+			".psw",  // Pocket Word DocumentCommon
+			".pvj",  // ProofVision Job Ticket
+			".pvm",  // Photo Video Index
+			".pwi",  // Word Mobile Document
+			".qdl",  // QDL Program Code
+			".rad",  // Radar ViewPoint Data
+			".readme",  // Readme Text
+			".rng",  // RELAX NG
+			".rpt",  // Report
+			".rsm",  // Resume
+			".rst",  // reStructuredText
+			".rtd",  // RagTime Examples Render
+			".rtf",  // Rich Text FormatVery Common
+			".rtfd",  // Rich Text Format Directory
+			".rtx",  // Rich Text Document
+			".run",  // Runscanner Scan
+			".rzk",  // File Crypt Password
+			".rzn",  // Red Zion Notes
+			".saf",  // SafeText
+			".safetext",  // SafeText
+			".sam",  // Ami Pro Document
+			".save",  // Nano Temporary Save
+			".scc",  // Scenarist Closed Caption
+			".scm",  // Schema
+			".sct",  // FoxPro Forms MemoAverage
+			".scw",  // Movie Magic Screenwriter Document
+			".sdm",  // StarOffice Mail Message
+			".sdw",  // StarOffice Writer Text Document
+			".sfv",  // Backup/Archive Checksum File (Internet Download)Common
+			".sgm",  // SGML
+			".sig",  // Signature FileCommon
+			".sls",  // Image Slideshow Playlist 
+			".sms",  // SMS Exported Text Message
+			".srt",  // Video/Movie Subtitle FileVery Common
+			".ssa",  // SubStation Alpha Video Subtitle
+			".strings",  // Text Strings
+			".stw",  // StarOffice Document Template
+			".sty",  // LaTeX Style Definition
+			".sxw",  // Staroffice Word DocumentAverage
+			".tab",  // Guitar Tablature
+			".tab",  // Tab Delimited Data
+			".tdf",  // XServe Test Definition
+			".tex",  // LaTeX Source
+			".text",  // ASCII TextAverage
+			".textclipping",  // OS X Text Clipping FileAverage
+			".thp",  // TurboTax
+			".tlb",  // VAX Text Library DocumentAverage
+			".tm",  // TeXmacs Document
+			".tmx",  // Translation Memory eXchange
+			".tpc",  // Topicscape Connection Placeholder
+			".tr2",  // TomeRaider eBook
+			".tr3",  // TomeRaider eBook
+			".tvj",  // TrueView Job Ticket
+			".twp",  // Complete Works DocumentRare
+			".txt",  // Text FileVery Common
+			".u3i",  // U3 Application Information
+			".unauth",  // SiteMinder Unauthorized Message
+			".unx",  // Unix Text FileAverage
+			".upd",  // Updated Program Data
+			".utf8",  // Unicode UTF8-Encoded Text
+			".utxt",  // Unicode Text
+			".vct",  // Microsoft FoxPro Class LibraryAverage
+			".vim",  // Vim Script fileUncommon
+			".vnt",  // Mobile Phone vNote
+			".vw3",  // VolksWriter Text FileAverage
+			".wbk",  // WordPerfect Workbook DocumentAverage
+			".wcf",  // WebEx Saved Chat Session
+			".wgz",  // Nokia S60 Web Runtime Widget Package
+			".wn",  // WriteNow Text
+			".wp",  // WordPerfect Document
+			".wp4",  // WordPerfect Document
+			".wp5",  // WordPerfect Document
+			".wp6",  // WordPerfect Document
+			".wp7",  // WordPerfect 7 Document
+			".wpa",  // ACT! Word Processor Document
+			".wpd",  // 602Text Document
+			".wpd",  // ACT! 2 Word Processor Document
+			".wpd",  // WordPerfect DocumentCommon
+			".wpl",  // DEC WPS Plus Text Document
+			".wps",  // Kingsoft Writer Document
+			".wps",  // Microsoft Works Text DocumentCommon
+			".wpt",  // WordPerfect Template
+			".wrd",  // Text Document
+			".wri",  // Windows Write Document
+			".wsd",  // WordStar Document
+			".wsh",  // Windows Script Host Settings FileAverage
+			".wtx",  // WinTopo Project Text fileAverage
+			".xdl",  // Oracle Expert Definition Language
+			".xdl",  // XML Schema
+			".xfd",  // XML Form in XFD FormatAverage
+			".xlf",  // XLIFF Document
+			".xwp",  // Crosstalk Session
+			".xwp",  // Xerox Writer Text Document
+			".xwp",  // XMLwriter Project
+			".xy",  // XYWrite v1 Document
+			".xy3",  // XyWrite 3 Document
+			".xyp",  // XyWrite Plus Document
+			".xyw",  // XyWrite Windows Document
+			".ybk",  // YanCEyWare Reader eBook
+			".yml",  // YAML Document
+			".zw",  // Chinese Text
+			"._nws",  // Newsgroup Message Copy FileAverage
+

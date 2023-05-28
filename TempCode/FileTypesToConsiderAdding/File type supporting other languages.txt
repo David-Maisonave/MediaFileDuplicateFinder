@@ -1,0 +1,5 @@
+//File type supporting other languages
+			".hz",  // Hanzi (Chinese) Text
+			".jis",  // Japanese Industry Standard Text
+			".jp1",  // Japanese (Romaji) Text
+			".zw",  // Chinese Text

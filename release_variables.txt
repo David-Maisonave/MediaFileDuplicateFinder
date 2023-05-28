@@ -7,6 +7,6 @@ net7.0
 Enter release title which can use environmental variables and/or batch variables like the following:%ReleaseName%, %MajorVersion%, %MinorVersion%, %DotNetVer%, %ReleaseTitle%, %Identifier%, %ProgramVersion%, %ReleaseTag%, %YEAR%, %MONTH%, %DAY%
 "%ReleaseName% Version %MajorVersion%.%MinorVersion%"                                                                                   "
 Enter release notes which can also use environmental variables.
-Version %MajorVersion%.%MinorVersion% build date=%YEAR%-%MONTH%-%DAY%; Change directories and filter/sort options to raido buttons so both are not used at the same time.
+Version %MajorVersion%.%MinorVersion% build date=%YEAR%-%MONTH%-%DAY%; Removed Beta from the title;
 Project to change version. Only needed for MSI package
 VDF.GUI\VDF.GUI.csproj

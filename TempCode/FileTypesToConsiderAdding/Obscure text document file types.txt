@@ -1,0 +1,31 @@
+			// Obscure text document file types
+			".abw",		// AbiWord Document
+			".act",		// FoxPro Documenting Wizard Action Diagram
+			".aim",		// AIMMS ASCII Model
+			".ans",		// ANSI Text
+			".asc",		// ASCII text
+			".ascii",	// ASCII Text
+			".boc",		// EasyWord Big Document
+			".diz",		// Description In Zipfile
+			".faq",		// Frequently Asked Questions Document
+			".hs",		// Java HelpSet
+			".klg",		// Log
+			".kwd",		// Keyword
+			".lit",		// Microsoft Reader eBook File - Very-Common
+			".mw",		// MacWrite II Text Document
+			".nfo",		// Information
+			".notes",	// Memento Notes
+			".now",		// ReadMe Text
+			".ort",  // Rich Text Editor Document
+			".pages",  // Pages Document - Very-Common
+			".rtx",  // Rich Text Document
+			".srt",  // Video/Movie Subtitle File - Very-Common
+			".utf8",  // Unicode UTF8-Encoded Text
+			".utxt",  // Unicode Text
+			".wps",  // Microsoft Works Text DocumentCommon
+			".wrd",  // Text Document
+			".wri",  // Windows Write Document
+			".xdl",  // XML Schema
+			".xfd",  // XML Form in XFD FormatAverage
+			".xlf",  // XLIFF Document
+			".yml",  // YAML Document

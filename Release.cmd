@@ -44,6 +44,8 @@ setlocal ENABLEDELAYEDEXPANSION
 ::					Leaves the VdProj modified, and does NOT reset to original file.
 :: NoClean
 ::					Does NOT delete temporary files after processing
+:: PauseOnExit
+::					Pause batch script before exiting.
 :: RelNotes
 ::					Release notes used to create Git release package. Argument should have double quotes.
 ::					This option overrides the value in the release_variables.txt
@@ -116,7 +118,7 @@ IF %ERRORLEVEL% NEQ 0 (
 	echo Performing early exit due to missing dotnet.exe!!!!
 	echo %Line__Separator2%
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 :: ################################################################################################
 echo %Line__Separator1%
@@ -132,6 +134,7 @@ set NoClean=
 set TestVar=
 set RelNotes=
 set RelTitle=
+set PauseOnExit=
 for %%a in (%*) do (
 	if [%%a] == [NoRepoUpdate] (set NoRepoUpdate=%IsTrue%) else (
 		if [%%a] == [NoBld] (
@@ -153,9 +156,11 @@ for %%a in (%*) do (
 										if [%%a] == [NoVdProjReset] (set NoVdProjReset=%IsTrue%) else (
 											if [%%a] == [NoClean] (set NoClean=%IsTrue%) else (
 												if [%%a] == [RelNotes] (set RelNotes=%IsTrue%) else (
-													if [%%a] == [RelTitle] (set RelTitle=%IsTrue%) else (
-														if [!RelNotes!] == [%IsTrue%] (call set "RelNotes=%%a") else (
-															if [!RelTitle!] == [%IsTrue%] (set RelTitle=%%a)
+													if [%%a] == [PauseOnExit] (set PauseOnExit=%IsTrue%) else (
+														if [%%a] == [RelTitle] (set RelTitle=%IsTrue%) else (
+															if [!RelNotes!] == [%IsTrue%] (call set "RelNotes=%%a") else (
+																if [!RelTitle!] == [%IsTrue%] (set RelTitle=%%a)
+															)
 														)
 													)
 												)
@@ -208,42 +213,42 @@ if [%ReleaseName%] == [] (
 	echo Error: Exiting early because ReleaseName is empty. ReleaseName="%ReleaseName%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 if [%DotNetVer%] == [] (
 	echo %Line__Error%
 	echo Error: Exiting early because DotNetVer is empty. DotNetVer="%DotNetVer%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 if [%MajorVersion%] == [] (
 	echo %Line__Error%
 	echo Error: Exiting early because MajorVersion is empty. MajorVersion="%MajorVersion%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 if [%MinorVersion%] == [] (
 	echo %Line__Error%
 	echo Error: Exiting early because MinorVersion is empty. MinorVersion="%MinorVersion%".
 	echo Check if file "%~dp0%ReleaseFileMinorVersion%" exist and is correctly formatted.
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 if 1%MajorVersion% NEQ +1%MajorVersion% (
 	echo %Line__Error%
 	echo Error: Exiting early because MajorVersion is NOT numeric. MajorVersion="%MajorVersion%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 if 1%MinorVersion% NEQ +1%MinorVersion% (
 	echo %Line__Error%
 	echo Error: Exiting early because MinorVersion is NOT numeric. MinorVersion="%MinorVersion%".
 	echo Check if file "%~dp0%ReleaseFileVariables%" is correctly formatted.
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 :: If not incrementing skip following section
 if [%NoIncVer%] == [%IsTrue%] (
@@ -338,7 +343,7 @@ echo %Line__Separator1%
 echo Pre-compile variables set
 echo %Line__Separator1%
 
-if [%TestVar%] == [%IsTrue%] (EXIT /B 0)
+if [%TestVar%] == [%IsTrue%] (goto :EarlyExit)
 
 if [%NoBld%] == [%IsTrue%] (
 	echo Skipping build
@@ -399,7 +404,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 		echo %Line__Error%
 		echo Error: Performming early exist due to error %ERRORLEVEL% from dotnet on OS target "%%a".
 		echo %Line__Error%
-		EXIT /B 0
+		goto :EarlyExit
 	)
 	echo       %%a build success!
 	echo       %Line__Separator3%
@@ -415,7 +420,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 				echo Error: Performming early exist due to error %ERRORLEVEL% from 7z for file "%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.zip".
 				echo Check folder contents of "%~dp0bin\Release\%DotNetVer%\%%a"
 				echo %Line__Error%
-				EXIT /B 0
+				goto :EarlyExit
 			)
 			call set "FileList=%%FileList%%%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.zip " 
 			if [%NoSetup%] == [%IsTrue%] (echo Skipping building MSI) else (
@@ -430,7 +435,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 						echo                add the path to the system environmental variable PATH
 						echo             3. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
 						echo %Line__Error%
-						EXIT /B 0
+						goto :EarlyExit
 					)
 					if exist .\%SetupProjectFile_VdProj_Temp% (del /Y .\%SetupProjectFile_VdProj_Temp%)
 					:: Replace the product version number
@@ -484,7 +489,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 							echo             4. Check if file exist: "%~dp0\%ReleaseName%_Setup\Release\%ReleaseName%_Setup.msi"
 							echo             5. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
 							echo %Line__Error%
-							EXIT /B 0
+							goto :EarlyExit
 						)
 						call set "FileList=%%FileList%%%PkgDir%\%PkgPrefix%%%a%PkgPostfix%_Setup.msi "
 						if [%NoClean%] == [%IsTrue%] ( echo Skipping delete of %SetupProjectFile_VdProj_Temp%) else ( del /Q %SetupProjectFile_VdProj_Temp%	)
@@ -497,7 +502,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 						echo             1. Check write permissions for path "%~dp0%%SetupProjectFile_VdProj_Temp%"
 						echo             2. Exclude building MSI [VdProj] by adding NoSetup to the command line options.
 						echo %Line__Error%
-						EXIT /B 0
+						goto :EarlyExit
 					)
 				)
 			)
@@ -510,7 +515,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 				echo Error: Performming early exist due to error %ERRORLEVEL% from 7z for file "%PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tar".
 				echo Check folder contents of "%~dp0bin\Release\%DotNetVer%\%%a"
 				echo %Line__Error%
-				EXIT /B 0
+				goto :EarlyExit
 			)
 			echo          %Line__Separator4%
 			echo          Creating %%a TGZ file
@@ -521,7 +526,7 @@ set ListOfOS=win-x64 osx-x64 linux-x64 osx-arm64
 				echo Error: Performming early exist due to error %ERRORLEVEL% from 7z for file "%PkgDir%/%PkgPrefix%%%a%PkgPostfix%.tgz".
 				echo Check file "%~dp0%PkgDir%\%PkgPrefix%%%a%PkgPostfix%.tar"
 				echo %Line__Error%
-				EXIT /B 0
+				goto :EarlyExit
 			)
 			echo          %Line__Separator4%
 			if [%NoClean%] == [%IsTrue%] ( echo Skipping delete of %PkgDir%\%PkgPrefix%%%a%PkgPostfix%.tar) else (
@@ -585,7 +590,7 @@ if %ERRORLEVEL% NEQ 0 (
 	echo %Line__Separator3%
 	echo %Line__Separator2%
 	echo %Line__Error%
-	EXIT /B 0
+	goto :EarlyExit
 )
 echo Git release creation complete for ReleaseTag %ReleaseTag%
 echo %Line__Separator1%
@@ -602,6 +607,21 @@ echo Step [6]: Save incremented minor version to file %ReleaseFileMinorVersion%
 echo %MinorVersion% >.\%ReleaseFileMinorVersion%
 :SkipIncUpdate
 
+echo %Line__Separator2%
+echo %Line__Separator2%
 echo %ReleaseTag% Done!
+echo %Line__Separator2%
 
 Explorer.exe %~dp0%PkgDir%
+goto :PauseOnExit_IfReuested
+
+:EarlyExit
+EXIT /B 0
+
+:PauseOnExit_IfReuested
+if [%PauseOnExit%] == [%IsTrue%] (
+	echo %Line__Separator4%
+	echo Press any key to end script....
+	echo %Line__Separator4%
+	pause
+)

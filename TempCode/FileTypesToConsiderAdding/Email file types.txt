@@ -1,0 +1,6 @@
+// Email file types
+			".msg",		// Microsoft Mail Message - Very-Common
+			".email",	// Microsoft Outlook Express mail message
+			".emlx",	// Mail Message
+			".imapmbox",// IMAP Mailbox
+			".mbox",	// Mailbox
