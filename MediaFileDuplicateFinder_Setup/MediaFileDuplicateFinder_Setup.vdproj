@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2CCB9D70B14240BEBF3E6C1A77BAB773"
+        "MsmKey" = "8:_59CBA6F383DD4D7EA2291A245BF1CA30"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,25 +33,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6B5E3ED96B83429F9AF635E898776344"
+        "MsmKey" = "8:_68438B99BEEC401F86FF818F18756792"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7019814ED8144D7A94049F8034934301"
+        "MsmKey" = "8:_6A66E259CC7048AFAFD3F04306A9C997"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9711ED9ADB7349BAAF6695CBC12B73A3"
+        "MsmKey" = "8:_7F50475E1BED452199C324A1884D29D0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_97A2BF415A06452887EECFF1E12AE907"
+        "MsmKey" = "8:_81C1D6CE901A4D79A5CC983668C6EEDA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_85FEECC21B6942F087DBFDDD56D50729"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,7 +69,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BD4AA2BEC02E4748AB1936A2FA47B8E5"
+        "MsmKey" = "8:_A55CC9567D564AD89D30525047914506"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B555724733F24AE1917807E370F3EF3B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BB5F68387ECC46C894644FCE7C25E462"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,31 +93,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2D3A34E6F0847FFA594263870CB702F"
+        "MsmKey" = "8:_E3F2A1745CE54D31859E531EB16E591D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F1B5FF9958D346A2A1A84CA6C331BF1B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F64D08644F724F8A9A82CEA6ED86EC05"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F70F2871042C4B6AAFE26E698FAC688B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FDB14C28727D4829A436F7124B4AB1B3"
+        "MsmKey" = "8:_FBA38D9D2A064DD19B23F0FCCE1C7F46"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -225,10 +225,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CCB9D70B14240BEBF3E6C1A77BAB773"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_59CBA6F383DD4D7EA2291A245BF1CA30"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\ffmpeg.exe"
-            "TargetName" = "8:ffmpeg.exe"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\avfilter-9.dll"
+            "TargetName" = "8:avfilter-9.dll"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
             "Condition" = "8:"
@@ -245,10 +245,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6B5E3ED96B83429F9AF635E898776344"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_68438B99BEEC401F86FF818F18756792"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\avdevice-60.dll"
-            "TargetName" = "8:avdevice-60.dll"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\postproc-57.dll"
+            "TargetName" = "8:postproc-57.dll"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
             "Condition" = "8:"
@@ -265,29 +265,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7019814ED8144D7A94049F8034934301"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A66E259CC7048AFAFD3F04306A9C997"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\avutil-58.dll"
-            "TargetName" = "8:avutil-58.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9711ED9ADB7349BAAF6695CBC12B73A3"
-            {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\avformat-60.dll"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\avformat-60.dll"
             "TargetName" = "8:avformat-60.dll"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
@@ -305,10 +285,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_97A2BF415A06452887EECFF1E12AE907"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7F50475E1BED452199C324A1884D29D0"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\ffprobe.exe"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\ffprobe.exe"
             "TargetName" = "8:ffprobe.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_81C1D6CE901A4D79A5CC983668C6EEDA"
+            {
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\swresample-4.dll"
+            "TargetName" = "8:swresample-4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85FEECC21B6942F087DBFDDD56D50729"
+            {
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\avdevice-60.dll"
+            "TargetName" = "8:avdevice-60.dll"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
             "Condition" = "8:"
@@ -345,69 +365,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD4AA2BEC02E4748AB1936A2FA47B8E5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A55CC9567D564AD89D30525047914506"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\swresample-4.dll"
-            "TargetName" = "8:swresample-4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E2D3A34E6F0847FFA594263870CB702F"
-            {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\swscale-7.dll"
-            "TargetName" = "8:swscale-7.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1B5FF9958D346A2A1A84CA6C331BF1B"
-            {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\postproc-57.dll"
-            "TargetName" = "8:postproc-57.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F64D08644F724F8A9A82CEA6ED86EC05"
-            {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\avcodec-60.dll"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\avcodec-60.dll"
             "TargetName" = "8:avcodec-60.dll"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
@@ -425,10 +385,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F70F2871042C4B6AAFE26E698FAC688B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B555724733F24AE1917807E370F3EF3B"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\avfilter-9.dll"
-            "TargetName" = "8:avfilter-9.dll"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\avutil-58.dll"
+            "TargetName" = "8:avutil-58.dll"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
             "Condition" = "8:"
@@ -445,9 +405,49 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FDB14C28727D4829A436F7124B4AB1B3"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB5F68387ECC46C894644FCE7C25E462"
             {
-            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\ffplay.exe"
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\swscale-7.dll"
+            "TargetName" = "8:swscale-7.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E3F2A1745CE54D31859E531EB16E591D"
+            {
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\ffmpeg.exe"
+            "TargetName" = "8:ffmpeg.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FBA38D9D2A064DD19B23F0FCCE1C7F46"
+            {
+            "SourcePath" = "8:..\\bin\\precompiledbinaries\\win-x64\\bin\\ffplay.exe"
             "TargetName" = "8:ffplay.exe"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
@@ -1027,7 +1027,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5ED6ABAC99D04B38AD65D9922193EFC7"
             {
-            "SourcePath" = "8:..\\VDF.GUI\\obj\\Debug\\net7.0\\apphost.exe"
+            "SourcePath" = "8:..\\VDF.GUI\\obj\\Release\\net7.0\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"
@@ -1055,7 +1055,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D33D4BB7F17C4C459194E55912EE6856"
             {
-            "SourcePath" = "8:..\\VDF.GUI\\obj\\Debug\\net7.0\\VDF.GUI.dll"
+            "SourcePath" = "8:..\\VDF.GUI\\obj\\Release\\net7.0\\VDF.GUI.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C7CB6E8A419E43BF9D8735A9E08A6F3E"

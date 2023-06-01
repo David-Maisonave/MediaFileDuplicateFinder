@@ -426,7 +426,7 @@ namespace VDF.Core {
 				Parallel.For(0, ScanList.Count, new ParallelOptions { CancellationToken = cancelationTokenSource.Token, MaxDegreeOfParallelism = Settings.MaxDegreeOfParallelism }, i => {
 					while (pauseTokenSource.IsPaused) Thread.Sleep(50);
 
-					FileEntry entry = ScanList[i];
+					FileEntry? entry = ScanList[i];
 					float difference = 0;
 					DuplicateFlags flags = DuplicateFlags.None;
 					bool isDuplicate;
@@ -436,7 +436,7 @@ namespace VDF.Core {
 						flippedGrayBytes = CreateFlippedGrayBytes(entry);
 
 					for (int n = i + 1; n < ScanList.Count; n++) {
-						FileEntry compItem = ScanList[n];
+						FileEntry? compItem = ScanList[n];
 						if (entry.IsImage != compItem.IsImage)
 							continue;
 						if (!entry.IsImage) {

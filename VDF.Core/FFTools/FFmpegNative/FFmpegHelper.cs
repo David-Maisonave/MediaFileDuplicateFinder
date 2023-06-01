@@ -17,11 +17,16 @@
 using System.Linq;
 using System.Runtime.InteropServices;
 using FFmpeg.AutoGen;
+using FFmpeg.AutoGen.Native;
 
 namespace VDF.Core.FFTools.FFmpegNative {
 	static class FFmpegHelper {
+		static readonly LinuxFunctionResolver linuxFunctionResolver = new();
+		static readonly WindowsFunctionResolver windowsFunctionResolver = new();
+		static readonly MacFunctionResolver macFunctionResolver = new();
+
 		private static bool ffmpegLibraryFound;
-		public static unsafe string? av_strerror(int error) {
+		public static unsafe string? Av_strerror(int error) {
 			const int bufferSize = 1024;
 			byte* buffer = stackalloc byte[bufferSize];
 			ffmpeg.av_strerror(error, buffer, bufferSize).ThrowExceptionIfError();
@@ -29,7 +34,11 @@ namespace VDF.Core.FFTools.FFmpegNative {
 			return message;
 		}
 
-		public static int ThrowExceptionIfError(this int error) => error < 0 ? throw new FFInvalidExitCodeException(av_strerror(error) ?? "Unknown error") : error;
+		public static int ThrowExceptionIfError(this int error) {
+			if (error < 0)
+				throw new FFInvalidExitCodeException(Av_strerror(error) ?? "Unknown error");
+			return error;
+		}
 
 		private static bool FindFFmpegLibraryFiles() {
 			try {
@@ -58,8 +67,14 @@ namespace VDF.Core.FFTools.FFmpegNative {
 				//Try fast lookup first, credits: @Maltragor
 				try {
 					ffmpeg.RootPath = string.Empty;
-					foreach (KeyValuePair<string, int> item in ffmpeg.LibraryVersionMap)
-						ffmpeg.GetOrLoadLibrary(item.Key);
+					foreach (KeyValuePair<string, int> item in ffmpeg.LibraryVersionMap) {
+						if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+							windowsFunctionResolver.GetOrLoadLibrary(item.Key, throwOnError: true);
+						else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+							linuxFunctionResolver.GetOrLoadLibrary(item.Key, throwOnError: true);
+						else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+							macFunctionResolver.GetOrLoadLibrary(item.Key, throwOnError: true);
+					}
 					return true;
 				}
 				catch { }

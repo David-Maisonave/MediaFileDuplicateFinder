@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -885,8 +886,21 @@ namespace VDF.GUI.ViewModels {
 				// return;
 			}
 			if (SettingsFile.Instance.UseNativeFfmpegBinding && SettingsFile.Instance.HardwareAccelerationMode == Core.FFTools.FFHardwareAccelerationMode.auto) {
-				await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings. Please explicit set a mode or set it to 'none'.");
-				return;
+				if (IsWindows || RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) 
+				{ /*VAAPI should work for both Windows and Linux*/
+					MessageBoxButtons? result = await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings.\nClick 'Yes' to set mode to VAAPI, \nclick 'No' to set mode to none, \nor click cancel.", MessageBoxButtons.Yes | MessageBoxButtons.No | MessageBoxButtons.Cancel);
+					if (result == MessageBoxButtons.Cancel) 
+						return;
+					SettingsFile.Instance.HardwareAccelerationMode = (result == MessageBoxButtons.Yes) ? Core.FFTools.FFHardwareAccelerationMode.vaapi : Core.FFTools.FFHardwareAccelerationMode.none;
+				}
+				else 
+				{
+					MessageBoxButtons? result = await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings. Click 'Yes' to continue scan with acceleration mode set to none, or click cancel.", MessageBoxButtons.Yes | MessageBoxButtons.Cancel);
+					if (result != MessageBoxButtons.Yes) 
+						return;
+					SettingsFile.Instance.HardwareAccelerationMode = Core.FFTools.FFHardwareAccelerationMode.none;
+				}
+
 			}
 			if (SettingsFile.Instance.Includes.Count == 0) {
 				await MessageBoxService.Show("There are no folders to scan. Please go to the settings and add at least one folder to 'Search Directories'.");

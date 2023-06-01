@@ -76,7 +76,7 @@ namespace VDF.GUI.Data {
 			get => _IgnoreWhitePixels;
 			set => this.RaiseAndSetIfChanged(ref _IgnoreWhitePixels, value);
 		}
-		int _MaxDegreeOfParallelism = 1;
+		int _MaxDegreeOfParallelism = -1;
 		[JsonPropertyName("MaxDegreeOfParallelism")]
 		public int MaxDegreeOfParallelism {
 			get => _MaxDegreeOfParallelism;
