@@ -124,7 +124,7 @@ namespace VDF.GUI.Data {
 			get => _AlwaysRetryFailedSampling;
 			set => this.RaiseAndSetIfChanged(ref _AlwaysRetryFailedSampling, value);
 		}
-		bool _UseNativeFfmpegBinding;
+		bool _UseNativeFfmpegBinding = false;
 		[JsonPropertyName("UseNativeFfmpegBinding")]
 		public bool UseNativeFfmpegBinding {
 			get => _UseNativeFfmpegBinding;

@@ -880,8 +880,9 @@ namespace VDF.GUI.ViewModels {
 				return;
 			}
 			if (SettingsFile.Instance.UseNativeFfmpegBinding && !ScanEngine.NativeFFmpegExists) {
-				await MessageBoxService.Show("Cannot find shared FFmpeg libraries. Either uncheck 'Use native ffmpeg binding' in settings or please follow instructions on Github and restart program");
-				return;
+				await MessageBoxService.Show("Cannot find shared FFmpeg libraries. To use native binding, please follow instructions on Github and restart program.\nScan will continue with native binding disabled.");
+				SettingsFile.Instance.UseNativeFfmpegBinding = false;
+				// return;
 			}
 			if (SettingsFile.Instance.UseNativeFfmpegBinding && SettingsFile.Instance.HardwareAccelerationMode == Core.FFTools.FFHardwareAccelerationMode.auto) {
 				await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings. Please explicit set a mode or set it to 'none'.");
