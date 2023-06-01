@@ -194,7 +194,7 @@
                                                     ToolTip.Tip="Keep longest / Best Quality" />
                                             </MenuItem.Header>
                                         </MenuItem>
-                                        <Separator/>
+                                        <Separator />
                                         <MenuItem Header="Date">
                                             <MenuItem Command="{Binding CheckOldestCommand}">
                                                 <MenuItem.Header>
@@ -207,7 +207,7 @@
                                                 </MenuItem.Header>
                                             </MenuItem>
                                         </MenuItem>
-                                        <Separator/>
+                                        <Separator />
                                         <MenuItem Command="{Binding CheckCustomCommand}">
                                             <MenuItem.Header>
                                                 <TextBlock VerticalAlignment="Center" Text="Select Custom..." />
@@ -248,7 +248,7 @@
                                                 <TextBlock VerticalAlignment="Center" Text="Delete permanently from disk" />
                                             </MenuItem.Header>
                                         </MenuItem>
-                                        <Separator  Width="220"/>
+                                        <Separator Width="220" />
 
                                         <MenuItem Command="{Binding RemoveSelectionFromListCommand}">
                                             <MenuItem.Header>
@@ -281,9 +281,15 @@
                                                     Fill="{DynamicResource SystemBaseHighColor}" />
                                             </StackPanel>
                                         </MenuItem.Header>
-                                        <RadioButton IsChecked="{Binding ElementName=GridDirectories, Path=IsVisible}" GroupName="View Group" Content="Directories"/>
-										<RadioButton IsChecked="{Binding  ElementName=GridFilter, Path=IsVisible}" GroupName="View Group" Content="Filter / Sort"/>
-                                        <RadioButton GroupName="View Group" Content="None"/>
+                                        <RadioButton
+                                            Content="Directories"
+                                            GroupName="View Group"
+                                            IsChecked="{Binding ElementName=GridDirectories, Path=IsVisible}" />
+                                        <RadioButton
+                                            Content="Filter / Sort"
+                                            GroupName="View Group"
+                                            IsChecked="{Binding ElementName=GridFilter, Path=IsVisible}" />
+                                        <RadioButton Content="None" GroupName="View Group" />
                                     </MenuItem>
                                     <MenuItem>
                                         <MenuItem.Header>
@@ -348,7 +354,7 @@
                                                                                     Minimum="{TemplateBinding Minimum}"
                                                                                     Orientation="Horizontal"
                                                                                     Value="{TemplateBinding Value,
-                                                                            Mode=TwoWay}">
+                                                                                                            Mode=TwoWay}">
                                                                                     <Track.DecreaseButton>
                                                                                         <RepeatButton
                                                                                             Name="PART_DecreaseButton"
@@ -472,7 +478,7 @@
                                                                                     Minimum="{TemplateBinding Minimum}"
                                                                                     Orientation="Horizontal"
                                                                                     Value="{TemplateBinding Value,
-                                                                                Mode=TwoWay}">
+                                                                                                            Mode=TwoWay}">
                                                                                     <Track.DecreaseButton>
                                                                                         <RepeatButton
                                                                                             Name="PART_DecreaseButton"
@@ -623,7 +629,10 @@
                                             Margin="5,0,0,2"
                                             FontWeight="Bold"
                                             Text="Search Directories" />
-                                        <Grid Grid.Row="1" RowDefinitions="Auto, *" IsEnabled="{Binding !IsScanning}">
+                                        <Grid
+                                            Grid.Row="1"
+                                            IsEnabled="{Binding !IsScanning}"
+                                            RowDefinitions="Auto, *">
                                             <Menu Grid.Row="0" MinHeight="30">
                                                 <MenuItem Command="{Binding AddIncludesToListCommand}">
                                                     <MenuItem.Header>
@@ -674,7 +683,10 @@
                                             Grid.Column="1"
                                             Margin="10,0,0,0"
                                             RowDefinitions="Auto, *">
-                                            <Menu Grid.Row="0" MinHeight="30" IsEnabled="{Binding !IsScanning}">
+                                            <Menu
+                                                Grid.Row="0"
+                                                MinHeight="30"
+                                                IsEnabled="{Binding !IsScanning}">
                                                 <MenuItem Command="{Binding AddBlacklistToListCommand}">
                                                     <MenuItem.Header>
                                                         <StackPanel Orientation="Horizontal">
@@ -722,9 +734,9 @@
                                         Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"
                                         CanUserResizeColumns="True">
                                         <DataGrid.KeyBindings>
-											<KeyBinding Command="{Binding OpenItemInFolderCommand}" Gesture="F10" />
-											<KeyBinding Command="{Binding OpenItems}" Gesture="F5" />
-											<KeyBinding Command="{Binding RenameFileCommand}" Gesture="F2" />
+                                            <KeyBinding Command="{Binding OpenItemInFolderCommand}" Gesture="F10" />
+                                            <KeyBinding Command="{Binding OpenItems}" Gesture="F5" />
+                                            <KeyBinding Command="{Binding RenameFileCommand}" Gesture="F2" />
                                             <KeyBinding Command="{Binding RenameSwapCommand}" Gesture="Shift+F2" />
                                             <KeyBinding Command="{Binding RenameSwapCommand}" Gesture="F3" />
                                             <KeyBinding Command="{Binding RenameSelectToCommand}" Gesture="Alt+F2" />
@@ -930,14 +942,43 @@
                                         </DataGrid.Columns>
                                         <DataGrid.ContextMenu>
                                             <ContextMenu>
-                                                <MenuItem Command="{Binding OpenItemInFolderCommand}" Header="Open In Folder" InputGesture="F10" />
-												<MenuItem Command="{Binding OpenItems}" Header="Open/Play File" InputGesture="F5" />
+                                                <MenuItem
+                                                    Command="{Binding OpenItemInFolderCommand}"
+                                                    Header="Open In Folder"
+                                                    InputGesture="F10" />
+                                                <MenuItem
+                                                    Command="{Binding OpenItems}"
+                                                    Header="Open/Play File"
+                                                    InputGesture="F5" />
                                                 <Separator />
-                                                <MenuItem Command="{Binding RenameFileCommand}" Header="Rename File" InputGesture="F2" ToolTip.Tip="Rename selected file" />
-                                                <MenuItem Command="{Binding RenameSwapCommand}" Header="Rename Swap" InputGesture="F3" ToolTip.Tip="Swap file names with other file in group" />
-                                                <MenuItem Command="{Binding RenameSelectToCommand}" Header="Select Rename Swap File 2" InputGesture="Alt+F2" ToolTip.Tip="Swap selected file name with Rename-Swap File 1" IsVisible="{Binding IsSelectFromSet}" />
-                                                <MenuItem Command="{Binding RenameSelectFromCommand}" Header="Select Rename Swap File 1" InputGesture="Control+F2" ToolTip.Tip="Select the first file that will part of a rename swap" IsVisible="{Binding !IsSelectFromSet}" />
-                                                <MenuItem Command="{Binding RenameClearSelected_To_FromCommand}" Header="Clear Rename Set" InputGesture="Shift+Control+F2" ToolTip.Tip="Clear rename source file name and rename target" IsVisible="{Binding IsSelectFromSet}" />
+                                                <MenuItem
+                                                    Command="{Binding RenameFileCommand}"
+                                                    Header="Rename File"
+                                                    InputGesture="F2"
+                                                    ToolTip.Tip="Rename selected file" />
+                                                <MenuItem
+                                                    Command="{Binding RenameSwapCommand}"
+                                                    Header="Rename Swap"
+                                                    InputGesture="F3"
+                                                    ToolTip.Tip="Swap file names with other file in group" />
+                                                <MenuItem
+                                                    Command="{Binding RenameSelectToCommand}"
+                                                    Header="Select Rename Swap File 2"
+                                                    InputGesture="Alt+F2"
+                                                    IsVisible="{Binding IsSelectFromSet}"
+                                                    ToolTip.Tip="Swap selected file name with Rename-Swap File 1" />
+                                                <MenuItem
+                                                    Command="{Binding RenameSelectFromCommand}"
+                                                    Header="Select Rename Swap File 1"
+                                                    InputGesture="Control+F2"
+                                                    IsVisible="{Binding !IsSelectFromSet}"
+                                                    ToolTip.Tip="Select the first file that will part of a rename swap" />
+                                                <MenuItem
+                                                    Command="{Binding RenameClearSelected_To_FromCommand}"
+                                                    Header="Clear Rename Set"
+                                                    InputGesture="Shift+Control+F2"
+                                                    IsVisible="{Binding IsSelectFromSet}"
+                                                    ToolTip.Tip="Clear rename source file name and rename target" />
                                                 <Separator />
                                                 <MenuItem>
                                                     <MenuItem.Header>
@@ -968,7 +1009,10 @@
                                                             </StackPanel>
                                                         </MenuItem.Header>
                                                     </MenuItem>
-                                                    <MenuItem Command="{Binding DeleteSelectionPermanentlyCommand}" InputGesture="Shift+Control+Delete" IsVisible="{Binding IsWindows}">
+                                                    <MenuItem
+                                                        Command="{Binding DeleteSelectionPermanentlyCommand}"
+                                                        InputGesture="Shift+Control+Delete"
+                                                        IsVisible="{Binding IsWindows}">
                                                         <MenuItem.Header>
                                                             <StackPanel Orientation="Horizontal">
                                                                 <Viewbox Width="16" Height="16">
@@ -983,7 +1027,7 @@
                                                             </StackPanel>
                                                         </MenuItem.Header>
                                                     </MenuItem>
-                                                    <Separator/>
+                                                    <Separator />
                                                     <MenuItem Command="{Binding RemoveSelectionFromListCommand}" InputGesture="Delete">
                                                         <MenuItem.Header>
                                                             <StackPanel Orientation="Horizontal">
@@ -1118,7 +1162,10 @@
                                     Orientation="Horizontal">
                                     <TextBlock Text="{Binding Duplicates.Count, Mode=OneWay, StringFormat=Duplicates In List: \{0\}}" />
                                     <Separator Width="1" Margin="5" />
-                                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="-" />
+                                    <TextBlock
+                                        Margin="5,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Text="-" />
                                     <TextBlock Text="{Binding TotalDuplicates, Mode=OneWay, StringFormat=Total Duplicates: \{0\}}" />
                                     <Separator Width="1" Margin="5" />
                                     <TextBlock Text="{Binding TotalDuplicateGroups, Mode=OneWay, StringFormat=Total Duplicate Groups: \{0\}}" />
@@ -1236,7 +1283,10 @@
                                                 Margin="5,0,0,2"
                                                 FontWeight="Bold"
                                                 Text="Search Directories" />
-                                            <Grid Grid.Row="1" RowDefinitions="Auto, *" IsEnabled="{Binding !IsScanning}">
+                                            <Grid
+                                                Grid.Row="1"
+                                                IsEnabled="{Binding !IsScanning}"
+                                                RowDefinitions="Auto, *">
                                                 <Menu Grid.Row="0" MinHeight="30">
                                                     <MenuItem Command="{Binding AddIncludesToListCommand}">
                                                         <MenuItem.Header>
@@ -1287,7 +1337,10 @@
                                                 Grid.Column="1"
                                                 Margin="10,0,0,0"
                                                 RowDefinitions="Auto, *">
-                                                <Menu Grid.Row="0" MinHeight="30" IsEnabled="{Binding !IsScanning}">
+                                                <Menu
+                                                    Grid.Row="0"
+                                                    MinHeight="30"
+                                                    IsEnabled="{Binding !IsScanning}">
                                                     <MenuItem Command="{Binding AddBlacklistToListCommand}">
                                                         <MenuItem.Header>
                                                             <StackPanel Orientation="Horizontal">
@@ -1328,39 +1381,49 @@
                                             </Grid>
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto, 1.5*" RowDefinitions="Auto,Auto,Auto">
-                                            <CheckBox Grid.Row="0" Grid.Column="0"
-                                                      VerticalAlignment="Center"
-                                                      Content="Include Sub Directories"
-                                                      IsEnabled="{Binding !IsScanning}"
-                                                      IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IncludeSubDirectories}"
-                                                      IsThreeState="False" />
-                                            <CheckBox Grid.Row="0" Grid.Column="2"
-                                                      VerticalAlignment="Center"
-                                                      Content="Include Images"
-                                                      IsEnabled="{Binding !IsScanning}"
-                                                      IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IncludeImages}"
-                                                      IsThreeState="False" />
-                                            <CheckBox Grid.Row="1" Grid.Column="0"
-                                                      VerticalAlignment="Center"
-                                                      Content="Ignore Read Only Folders"
-                                                      IsEnabled="{Binding !IsScanning}"
-                                                      IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IgnoreReadOnlyFolders}"
-                                                      IsThreeState="False" />
-                                            <CheckBox Grid.Row="2" Grid.Column="0"
-                                                      VerticalAlignment="Center"
-                                                      Content="Exclude Reparse Points"
-                                                      IsEnabled="{Binding !IsScanning}"
-                                                      IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IgnoreReparsePoints}"
-                                                      IsThreeState="False"
-                                                      ToolTip.Tip="Symbolic links and junction only" />
-                                            <CheckBox Grid.Row="2" Grid.Column="2"
-                                                      VerticalAlignment="Center"
-                                                      Content="Exclude Hard Links"
-                                                      IsVisible="{Binding IsWindows}"
-                                                      IsEnabled="{Binding !IsScanning}"
-                                                      IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IgnoreHardLinks}"
-                                                      IsThreeState="False"
-                                                      ToolTip.Tip="Ignore duplicate files which share the same hard link (Windows NTFS Only)" />
+                                            <CheckBox
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                VerticalAlignment="Center"
+                                                Content="Include Sub Directories"
+                                                IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IncludeSubDirectories}"
+                                                IsEnabled="{Binding !IsScanning}"
+                                                IsThreeState="False" />
+                                            <CheckBox
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                VerticalAlignment="Center"
+                                                Content="Include Images"
+                                                IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IncludeImages}"
+                                                IsEnabled="{Binding !IsScanning}"
+                                                IsThreeState="False" />
+                                            <CheckBox
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                VerticalAlignment="Center"
+                                                Content="Ignore Read Only Folders"
+                                                IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IgnoreReadOnlyFolders}"
+                                                IsEnabled="{Binding !IsScanning}"
+                                                IsThreeState="False" />
+                                            <CheckBox
+                                                Grid.Row="2"
+                                                Grid.Column="0"
+                                                VerticalAlignment="Center"
+                                                Content="Exclude Reparse Points"
+                                                IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IgnoreReparsePoints}"
+                                                IsEnabled="{Binding !IsScanning}"
+                                                IsThreeState="False"
+                                                ToolTip.Tip="Symbolic links and junction only" />
+                                            <CheckBox
+                                                Grid.Row="2"
+                                                Grid.Column="2"
+                                                VerticalAlignment="Center"
+                                                Content="Exclude Hard Links"
+                                                IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=IgnoreHardLinks}"
+                                                IsEnabled="{Binding !IsScanning}"
+                                                IsThreeState="False"
+                                                IsVisible="{Binding IsWindows}"
+                                                ToolTip.Tip="Ignore duplicate files which share the same hard link (Windows NTFS Only)" />
                                         </Grid>
                                         <Grid
                                             ColumnDefinitions="Auto, Auto, Auto, Auto, *"
@@ -1525,7 +1588,7 @@
                                             Text="Appearance" />
                                     </TabItem.Header>
                                     <StackPanel>
-                                        <!-- Changed ¹ to * which -->
+                                        <!--  Changed ¹ to * which  -->
                                         <CheckBox
                                             VerticalAlignment="Center"
                                             Content="Use Mica (Win 11 only)*"
@@ -1623,7 +1686,7 @@
                                                         Content="Use native Ffmpeg binding"
                                                         IsChecked="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=UseNativeFfmpegBinding}"
                                                         IsThreeState="False"
-                                                        ToolTip.Tip="If activated it will call ffmpeg functions natively instead of spawning a new ffmpeg.exe process. This is MUCH(!!) faster. WARNING: You must use the latest SHARED and STABLE ffmpeg version. If something goes wrong then whole program will crash." />
+                                                        ToolTip.Tip="If activated it will call ffmpeg functions natively instead of spawning a new ffmpeg.exe process. Native binding is about 5-10% faster. If binding fails, the binding option will be disabled, and scan will continue." />
                                                     <CheckBox
                                                         VerticalAlignment="Center"
                                                         Content="Ignore Black Pixels"
@@ -1656,7 +1719,10 @@
                                                         ToolTip.Tip="If checked scan is also performed against your entire database unless database files are excluded otherwise (i.e. exclude list, file path must contain, etc)" />
                                                 </StackPanel>
                                                 <StackPanel Grid.Column="1" Margin="15,5,0,0">
-                                                    <TextBlock VerticalAlignment="Center" Text="Percent:" ToolTip.Tip="Minimum percentage that thumbnails must match before they are considered duplicates" />
+                                                    <TextBlock
+                                                        VerticalAlignment="Center"
+                                                        Text="Percent:"
+                                                        ToolTip.Tip="Minimum percentage that thumbnails must match before they are considered duplicates" />
                                                     <NumericUpDown
                                                         Width="200"
                                                         Height="26"
@@ -1667,7 +1733,10 @@
                                                         Minimum="1"
                                                         ToolTip.Tip="Minimum percentage that thumbnails must match before they are considered duplicates"
                                                         Value="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=Percent}" />
-                                                    <TextBlock VerticalAlignment="Center" Text="Duration Difference:" ToolTip.Tip="Only scan videos against each other where the duration is not bigger/smaller than X %" />
+                                                    <TextBlock
+                                                        VerticalAlignment="Center"
+                                                        Text="Duration Difference:"
+                                                        ToolTip.Tip="Only scan videos against each other where the duration is not bigger/smaller than X %" />
                                                     <NumericUpDown
                                                         Width="200"
                                                         Height="26"
@@ -1736,7 +1805,10 @@
                                                         VerticalAlignment="Center"
                                                         Text="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=CustomDatabaseFolder}"
                                                         ToolTip.Tip="Specify a custom database folder. Otherwise it uses the current folder." />
-                                                    <TextBlock VerticalAlignment="Center" Text="Custom FF Arguments:" ToolTip.Tip="FF(mpeg/probe) arguments passed to the end of the internal arguments. Most users can leave this empty." />
+                                                    <TextBlock
+                                                        VerticalAlignment="Center"
+                                                        Text="Custom FF Arguments:"
+                                                        ToolTip.Tip="FF(mpeg/probe) arguments passed to the end of the internal arguments. Most users can leave this empty." />
                                                     <TextBox
                                                         VerticalAlignment="Center"
                                                         Text="{Binding Source={x:Static Settings:SettingsFile.Instance}, Path=CustomFFArguments}"
@@ -1744,7 +1816,8 @@
                                                     <TextBlock
                                                         VerticalAlignment="Center"
                                                         FontSize="14"
-                                                        Text="Hardware Acceleration:" ToolTip.Tip="Hardware acceleration mode of ffmpeg" />
+                                                        Text="Hardware Acceleration:"
+                                                        ToolTip.Tip="Hardware acceleration mode of ffmpeg" />
                                                     <ComboBox
                                                         x:Name="ComboboxHardwareAccelerationMode"
                                                         VerticalAlignment="Center"
@@ -1781,7 +1854,7 @@
                                                     Fill="{DynamicResource SystemBaseHighColor}" />
                                             </StackPanel>
                                         </MenuItem.Header>
-                                        <MenuItem Command="{Binding CleanDatabaseCommand}" ToolTip.Tip="Removes entries for files which no longer exists or failed on ffmpeg/ffprobe" >
+                                        <MenuItem Command="{Binding CleanDatabaseCommand}" ToolTip.Tip="Removes entries for files which no longer exists or failed on ffmpeg/ffprobe">
                                             <MenuItem.Header>
                                                 <StackPanel Orientation="Horizontal">
                                                     <Viewbox Width="16" Height="16">
@@ -1963,7 +2036,7 @@
                                                 </StackPanel>
                                             </MenuItem.Header>
                                         </MenuItem>
-                                        <Separator IsVisible="{Binding !!Duplicates.Count}"/>
+                                        <Separator IsVisible="{Binding !!Duplicates.Count}" />
                                         <MenuItem IsVisible="{Binding !!Duplicates.Count}">
                                             <MenuItem.Header>
                                                 <StackPanel Orientation="Horizontal">
@@ -2070,7 +2143,7 @@
                                                     Margin="5,0,0,0"
                                                     VerticalAlignment="Center"
                                                     Text="Latest Release"
-                                                    ToolTip.Tip="Check for latest release"/>
+                                                    ToolTip.Tip="Check for latest release" />
                                             </MenuItem.Header>
                                         </MenuItem>
                                         <Separator />
@@ -2086,7 +2159,7 @@
                                                         Margin="5,0,0,0"
                                                         VerticalAlignment="Center"
                                                         Text="Clear Logs"
-                                                        ToolTip.Tip="Clear log entries"/>
+                                                        ToolTip.Tip="Clear log entries" />
                                                 </StackPanel>
                                             </MenuItem.Header>
                                         </MenuItem>
