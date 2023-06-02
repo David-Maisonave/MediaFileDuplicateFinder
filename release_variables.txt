@@ -7,6 +7,6 @@ net7.0
 Enter release title which can use environmental variables and/or batch variables like the following:%ReleaseName%, %MajorVersion%, %MinorVersion%, %DotNetVer%, %ReleaseTitle%, %Identifier%, %ProgramVersion%, %ReleaseTag%, %YEAR%, %MONTH%, %DAY%
 "%ReleaseName% Version %MajorVersion%.%MinorVersion%"                                                                                   "
 Enter release notes which can also use environmental variables.
-Version %MajorVersion%.%MinorVersion% build date=%YEAR%-%MONTH%-%DAY%; Added Ffmpeg 6.0 native support. Default Parallelism to -1 (auto). Prompt to change Acceleration to none for native mode.
+Version %MajorVersion%.%MinorVersion% build date=%YEAR%-%MONTH%-%DAY%; Remove beta from title. When displaying errors, added option to open Wiki page on related error. Create database folder if it doesn't exist.
 Project to change version. Only needed for MSI package
 VDF.GUI\VDF.GUI.csproj

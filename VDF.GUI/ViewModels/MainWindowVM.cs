@@ -58,7 +58,7 @@ namespace VDF.GUI.ViewModels {
 		readonly public static string appVersion = (version != null) ? version.Major + "." + version.Minor + "." + version.Build + "." + version.Revision : "0.0";
 		readonly public static string appMajMinorVersion = (version != null) ? version.Major + "." + version.Minor : "0.0";
 
-		readonly string _MainWindowTitle = String.Format("Media File Duplicate Finder Ver {0} (Beta) - File Manager", appMajMinorVersion);
+		readonly string _MainWindowTitle = String.Format("Media File Duplicate Finder Ver {0} - File Manager", appMajMinorVersion);
 		public string MainWindowTitle {
 			get => _MainWindowTitle;
 		}
@@ -868,47 +868,59 @@ namespace VDF.GUI.ViewModels {
 		});
 		async Task StartScanCommandMain(string command) {
 			if (!string.IsNullOrEmpty(SettingsFile.Instance.CustomDatabaseFolder) && !Directory.Exists(SettingsFile.Instance.CustomDatabaseFolder)) {
-				await MessageBoxService.Show("The custom database folder does not exist!");
-				return;
+				try {
+					Directory.CreateDirectory(SettingsFile.Instance.CustomDatabaseFolder);
+				}
+				catch (Exception ex) {
+					await MessageBoxService.Show($"Failed to create custom database folder '{SettingsFile.Instance.CustomDatabaseFolder}'\n\nReason: {ex.Message}");
+					return;
+				}
+				if (!Directory.Exists(SettingsFile.Instance.CustomDatabaseFolder)) {
+					await MessageBoxService.Show($"The custom database folder does not exist!\n\n{SettingsFile.Instance.CustomDatabaseFolder}");
+					return;
+				}
 			}
 
-			if (!SettingsFile.Instance.UseNativeFfmpegBinding && !ScanEngine.FFmpegExists) {
-				await MessageBoxService.Show("Cannot find FFmpeg. Please follow instructions on Github and restart program");
-				return;
-			}
-			if (!ScanEngine.FFprobeExists) {
-				await MessageBoxService.Show("Cannot find FFprobe. Please follow instructions on Github and restart program");
+			if (!SettingsFile.Instance.UseNativeFfmpegBinding && (!ScanEngine.FFmpegExists || !ScanEngine.FFprobeExists)) {
+				String WikiUrl = "https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/4.-FFmpeg-and-FFProbe-Requirements";
+				MessageBoxButtons? result = await MessageBoxService.Show($"Cannot find FFmpeg and/or FFprobe binaries. To get the FFmpeg binaries, use the following link: {WikiUrl}.\n\nClick 'Yes' to open wiki web page with Ffmpeg binaries instructions.\nClick 'Cancel' to cancel scan.", MessageBoxButtons.Yes | MessageBoxButtons.Cancel);
+				if (result == MessageBoxButtons.Yes)
+					OpenUrl(WikiUrl);
 				return;
 			}
 			if (SettingsFile.Instance.UseNativeFfmpegBinding && !ScanEngine.NativeFFmpegExists) {
-				await MessageBoxService.Show("Cannot find shared FFmpeg libraries. To use native binding, please follow instructions on Github and restart program.\nScan will continue with native binding disabled.");
+				String WikiUrl = "https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/3.-Scan-Options#use-native-ffmpeg-binding";
+				MessageBoxButtons? result = await MessageBoxService.Show($"Cannot find shared Ffmpeg libraries.\nTo use native binding, see following wiki link: {WikiUrl}.\n\nClick 'Yes' to disable native option and continue scanning.\nClick 'No' to cancel scan, and open web page with Ffmpeg binaries instructions.\nClick 'Cancel' to cancel scan.", MessageBoxButtons.Yes | MessageBoxButtons.No | MessageBoxButtons.Cancel);
+				if (result != MessageBoxButtons.Yes) {
+					if (result == MessageBoxButtons.No)
+						OpenUrl(WikiUrl);
+					return;
+				}
 				SettingsFile.Instance.UseNativeFfmpegBinding = false;
-				// return;
 			}
 			if (SettingsFile.Instance.UseNativeFfmpegBinding && SettingsFile.Instance.HardwareAccelerationMode == Core.FFTools.FFHardwareAccelerationMode.auto) {
-				if (IsWindows || RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) 
-				{ /*VAAPI should work for both Windows and Linux*/
-					MessageBoxButtons? result = await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings.\nClick 'Yes' to set mode to VAAPI, \nclick 'No' to set mode to none, \nor click cancel.", MessageBoxButtons.Yes | MessageBoxButtons.No | MessageBoxButtons.Cancel);
-					if (result == MessageBoxButtons.Cancel) 
-						return;
-					SettingsFile.Instance.HardwareAccelerationMode = (result == MessageBoxButtons.Yes) ? Core.FFTools.FFHardwareAccelerationMode.vaapi : Core.FFTools.FFHardwareAccelerationMode.none;
+				String WikiUrl = "https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/3.-Scan-Options#hardware-acceleration";
+				MessageBoxButtons? result = await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings.\n\nClick 'Ok' to set hardware acceleration mode to none.\nClick 'Yes' to set hardware acceleration mode to VAAPI.\nClick 'No' to open wiki web page on hardware acceleration option.\nClick 'Cancel' to cancel scan.", MessageBoxButtons.Ok | MessageBoxButtons.Yes | MessageBoxButtons.No | MessageBoxButtons.Cancel);
+				if (result == MessageBoxButtons.Cancel || result == MessageBoxButtons.No) {
+					if (result == MessageBoxButtons.No)
+						OpenUrl(WikiUrl);
+					return;
 				}
-				else 
-				{
-					MessageBoxButtons? result = await MessageBoxService.Show("You cannot use hardware acceleration mode 'auto' with native ffmpeg bindings. Click 'Yes' to continue scan with acceleration mode set to none, or click cancel.", MessageBoxButtons.Yes | MessageBoxButtons.Cancel);
-					if (result != MessageBoxButtons.Yes) 
-						return;
-					SettingsFile.Instance.HardwareAccelerationMode = Core.FFTools.FFHardwareAccelerationMode.none;
-				}
-
+				SettingsFile.Instance.HardwareAccelerationMode = (result == MessageBoxButtons.Yes) ? Core.FFTools.FFHardwareAccelerationMode.vaapi : Core.FFTools.FFHardwareAccelerationMode.none;
 			}
 			if (SettingsFile.Instance.Includes.Count == 0) {
 				await MessageBoxService.Show("There are no folders to scan. Please go to the settings and add at least one folder to 'Search Directories'.");
 				return;
 			}
 			if (SettingsFile.Instance.MaxDegreeOfParallelism == 0) {
-				await MessageBoxService.Show("MaxDegreeOfParallelism cannot be 0. Please go to the settings and change it.");
-				return;
+				String WikiUrl = "https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/3.-Scan-Options#hardware-acceleration";
+				MessageBoxButtons? result = await MessageBoxService.Show("MaxDegreeOfParallelism cannot be 0. Please go to the settings and change it.\n\nClick 'Ok' to set MaxDegreeOfParallelism to -1 (auto).\nClick 'Yes' to set MaxDegreeOfParallelism to 1 (no parallelism).\nClick 'No' to open wiki web page on MaxDegreeOfParallelism option.\nClick 'Cancel' to cancel scan.", MessageBoxButtons.Ok | MessageBoxButtons.Yes | MessageBoxButtons.No | MessageBoxButtons.Cancel);
+				if (result == MessageBoxButtons.Cancel || result == MessageBoxButtons.No) {
+					if (result == MessageBoxButtons.No)
+						OpenUrl(WikiUrl);
+					return;
+				}
+				SettingsFile.Instance.MaxDegreeOfParallelism = (result == MessageBoxButtons.Yes) ? 1 : -1;
 			}
 			if (SettingsFile.Instance.FilterByFileSize && SettingsFile.Instance.MaximumFileSize <= SettingsFile.Instance.MinimumFileSize) {
 				await MessageBoxService.Show("Filtering maximum file size cannot be greater or equal minimum file size.");
@@ -1080,6 +1092,27 @@ namespace VDF.GUI.ViewModels {
 
 			if (SettingsFile.Instance.BackupAfterListChanged)
 				await ExportScanResultsIncludingThumbnails(BackupScanResultsFile);
+		}
+		public async static void OpenUrl(string url) {
+			try {
+				if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+					url = url.Replace("&", "^&");
+					Process.Start("explorer", url);
+				}
+				else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+					Process.Start("xdg-open", url);
+				else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+					Process.Start("open", url);
+				else
+					Process.Start(url);
+			}
+			catch (System.ComponentModel.Win32Exception noBrowser) {
+				if (noBrowser.ErrorCode == -2147467259)
+					await MessageBoxService.Show(noBrowser.Message);
+			}
+			catch (System.Exception other) {
+				await MessageBoxService.Show(other.Message);
+			}
 		}
 
 		public static ReactiveCommand<Unit, Unit> ExpandAllGroupsCommand => ReactiveCommand.Create(() => Utils.TreeHelper.ToggleExpander(GetDataGrid, true));
