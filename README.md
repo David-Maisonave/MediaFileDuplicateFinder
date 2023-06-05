@@ -60,13 +60,3 @@ See [Wiki](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/4.-F
 ## License
 - Media File Duplicate Finder is licensed under GPLv3  
 - ffmpeg & ffprobe are licensed under LGPL 2.1 / GPL v2
-
-
-## Building
-- .NET Core 6.x
-- Visual Studio 2022
-- Avalonia VS Extension is recommended but not required
-
-## Committing
-- Your pull request should only contain code for a single addition or fix
-- Unless it refers to an existing issue, write into your pull request what it does
