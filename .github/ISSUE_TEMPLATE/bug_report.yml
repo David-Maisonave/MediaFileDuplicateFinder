@@ -34,6 +34,7 @@ body:
     attributes:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
+        value: |
         1. Go to '...'
         2. Click on '....'
         3. Scroll down to '....'
