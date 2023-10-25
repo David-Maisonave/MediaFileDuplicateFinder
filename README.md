@@ -55,36 +55,8 @@ _* Features which came with the original fork. All other features are unique to 
 - Feature to automatically translate file names from one language to another.
 
 ## Requirements
-### FFmpeg => v6.0:
-#### Windows user:
-- The MSI package contains and installs the ffmpeg binaries. 
-- If using the zip file, get the latest package from [https://github.com/BtbN/FFmpeg-Builds/releases/latest](https://github.com/BtbN/FFmpeg-Builds/releases/latest), and extract ffmpeg and ffprobe into the same directory of VDF.GUI.dll.
-
-#### Linux user:
-- Installing ffmpeg:
-```
-sudo apt-get update
-sudo apt-get install ffmpeg
-```
-Open terminal in VDF folder and execute `./VDF.GUI`
-You may need to set execute permission first `sudo chmod 777 VDF.GUI`
-
-#### MacOS user:
-- Install ffmpeg / ffprobe using homebrew
-
-Open terminal in VDF folder and execute `./VDF.GUI` or if you have .NET installed `dotnet VDF.GUI.dll`
-You may get a permission error. Open system settings of your Mac, go to `Privacy & Security` and then `Developer Tools`. Now add `Terminal` to the list.
+See [Wiki](https://github.com/David-Maisonave/MediaFileDuplicateFinder/wiki/4.-FFmpeg-and-FFProbe-Requirements) link for FFmpeg requirements and installation instructions.
 
 ## License
 - Media File Duplicate Finder is licensed under GPLv3  
 - ffmpeg & ffprobe are licensed under LGPL 2.1 / GPL v2
-
-
-## Building
-- .NET Core 6.x
-- Visual Studio 2022
-- Avalonia VS Extension is recommended but not required
-
-## Committing
-- Your pull request should only contain code for a single addition or fix
-- Unless it refers to an existing issue, write into your pull request what it does
