@@ -34,7 +34,7 @@ body:
     attributes:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
-      placeholder: ". Go to ...\n
+      placeholder: "1. Go to ...\n
         2. Click on ....\n
         3. Scroll down to ....\n
         4. See error"
