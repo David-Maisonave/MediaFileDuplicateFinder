@@ -34,7 +34,7 @@ body:
     attributes:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
-      value: foo foo
+      placeholder: foo foo
     validations:
       required: true      
   - type: textarea
