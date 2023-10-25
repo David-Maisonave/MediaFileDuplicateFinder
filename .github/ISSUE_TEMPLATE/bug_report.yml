@@ -2,7 +2,7 @@ name: 🐞 New Bug Report
 description: Create a bug report
 title: "🐞[Bug]: "
 labels: [Bug]
-assignees: "jcaillon"
+assignees: "David-Maisonave"
 body:
   - type: markdown
     attributes:
@@ -12,48 +12,44 @@ body:
   - type: textarea
     id: feature
     attributes:
-      label: Please enter a clear and concise description of the issue.
+      label: Please enter a clear and concise description of the bug.
     validations:
       required: true
   - type: input
     id: os
     attributes:
       label: What Operating System (OS)?
-      placeholder: e.g. Windows 10, Windows 11, MacOS, Linux, Any
+      placeholder: e.g. Windows, MacOS, Linux, Any
     validations:
       required: true
   - type: input
     id: app-version
     attributes:
-      label: What version of 3P?
-      placeholder: e.g. v1.8.8, 1.8.7
+      label: What version of MediaFileDuplicateFinder?
+      placeholder: e.g. 1.0, 1.1
     validations:
       required: true
+  - type: input
+    id: app-download
+    attributes:
+      label: Where did you download MediaFileDuplicateFinder from?
+      placeholder: e.g. github, sourceforge.net, Axter.com etc.
+    validations:
+      required: false
   - type: textarea
     id: steps-to-reproduce
     attributes:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
-      placeholder: "1. Go to ...\n
-        2. Click on ....\n
-        3. Scroll down to ....\n
-        4. See error"
     validations:
-      required: true      
+      required: false      
   - type: textarea
     id: expected-behavior
     attributes:
       label: Expected Behavior
       description: What was the expected behavior?
     validations:
-      required: true      
-  - type: textarea
-    id: actual-behavior
-    attributes:
-      label: Actual Behavior
-      description: What actually happend?
-    validations:
-      required: true      
+      required: false      
   - type: textarea
     id: snapshots
     attributes:
