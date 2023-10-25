@@ -34,7 +34,7 @@ body:
     attributes:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
-      placeholder: |
+      placeholder: 
       1. Go to ...
     validations:
       required: true      
