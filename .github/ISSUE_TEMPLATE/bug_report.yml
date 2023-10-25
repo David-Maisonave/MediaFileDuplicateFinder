@@ -35,7 +35,9 @@ body:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
       placeholder: '1. Go to ...
-      2. Click on ....'
+        2. Click on ....
+        3. Scroll down to ....
+        4. See error'
     validations:
       required: true      
   - type: textarea
