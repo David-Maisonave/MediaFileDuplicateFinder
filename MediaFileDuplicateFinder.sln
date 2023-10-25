@@ -13,7 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellane
 	ProjectSection(SolutionItems) = preProject
 		MediaFileDuplicateFinder_Setup\EnableLaunchApplication.js = MediaFileDuplicateFinder_Setup\EnableLaunchApplication.js
 		gitignore.txt = gitignore.txt
-		VDF.GUI\Views\MainWindow.xaml.xml = VDF.GUI\Views\MainWindow.xaml.xml
 		Notes.txt = Notes.txt
 		README.md = README.md
 	EndProjectSection

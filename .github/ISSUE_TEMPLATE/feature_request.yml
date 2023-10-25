@@ -1,8 +1,8 @@
 name: Feature Request
-description: Suggest an idea to improve MediaFileDuplicateFinder
-title: "[Enhancement]: "
-labels: [Enhancement, Core]
-assignees: "David-Maisonave"
+description: Suggest an idea to improve 3P
+title: "[Feature]: "
+labels: [Enhancement]
+assignees: "jcaillon"
 body:
   - type: markdown
     attributes:
@@ -12,27 +12,38 @@ body:
   - type: textarea
     id: feature
     attributes:
-      label: A clear and concise description of the feature or enhancement you'd like to see in MediaFileDuplicateFinder
+      label: Describe feature or enhancement.
+      description: A clear and concise description of the feature or enhancement you'd like to see in 3P.
     validations:
       required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem? Please describe.
+      description: 
+            A clear and concise description of what the problem. Ex. I'm always frustrated when.
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: 
+            A clear and concise description of any alternative solutions or features you've considered.
+    validations:
+      required: false
   - type: input
     id: os
     attributes:
       label: Is it OS specific?
       placeholder: e.g. Windows, MacOS, Linux, Any
     validations:
-      required: false
-  - type: input
-    id: app-download
-    attributes:
-      label: Where did you download MediaFileDuplicateFinder from?
-      placeholder: e.g. github, sourceforge.net, Axter.com etc.
-    validations:
-      required: false
+      required: true
   - type: textarea
     id: Snapshots
     attributes:
-      label: Snapshots / Images
-      description: Optionally attach images which can help explain the feature, and a description of what to look for in the image(s).
+      label: Additional context, snapshots, or images
+      description: Add any other context or screenshots about the feature request. | 
+      Add attach images which can help explain the feature, and a description of what to look for in the image(s).
     validations:
       required: false      
