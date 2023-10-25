@@ -34,7 +34,8 @@ body:
     attributes:
       label: Steps To Reproduce
       description: What are the steps used to reproduce this issue?
-      placeholder: 1. Go to ...\n2. Click on ....
+      placeholder: >
+      1. Go to ...\n2. Click on ....
     validations:
       required: true      
   - type: textarea
